@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FootballMatches</string>
+    <string name="nextBtnTxt">Next</string>
+    <string name="showBtnTxt">Show</string>
+</resources>

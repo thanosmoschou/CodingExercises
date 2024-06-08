@@ -1,0 +1,1 @@
+When you search for fonts inside android studio click on the second choise (add font to project) and not the first one(create downloadable font). With add font to project option it will download a ttf file.

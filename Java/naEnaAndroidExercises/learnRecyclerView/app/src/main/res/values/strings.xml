@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LearnRecyclerView</string>
+    <string-array name="names_string_array">
+        <item>Thanasis</item>
+        <item>Eleni</item>
+        <item>Giannoula</item>
+        <item>Panagiotis</item>
+    </string-array>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LearnHowToUseAndroidComponents</string>
+    <string name="msgTxtText">Hello from Na ena Android...</string>
+    <string name="btnText">Say Hello</string>
+    <string name="userHello">Hello to %s</string>
+    <string name="progbarenable">Progress Bar</string>
+    <string name="newTxt">This is a new text</string>
+    <string name="nextBtnTxt">Next</string>
+    <string name="prevBtnTxt">Return</string>
+</resources>

@@ -1,0 +1,89 @@
+Keep in mind that all the activities need to be added to the manifest file.
+A manifest file should look like this:
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RCLApp"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false">
+        </activity>
+
+        <activity android:name=".RegistrationActivity"
+            android:exported="false">
+        </activity>
+
+        <activity android:name=".RecycleActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".YourRewardsActivity"
+            android:exported="false">
+        </activity>
+
+        <activity android:name=".AdminOpenRequestsActivity"
+            android:exported="false">
+        </activity>
+
+
+    </application>
+
+</manifest>
+
+You can add an activity tag just like this:
+<activity
+    some attributes go here />
+
+or like this:
+<activity
+    some attributes go here>
+
+    something goes here
+</activity>
+
+It supports both styles (self closing tag and open-closing tag)
+
+Check this:
+
+<activity android:name=".RecycleActivity"
+    android:exported="true">
+
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+
+</activity>
+
+The intent filter tag tells the android where is the starting point of the app.
+Also you need the exported attribute set to true if you add the intent filter tag
+inside an activity tag. If you want to change the entry point just put this intent filter
+tag inside another activity and set the exported attribute of this activity set to true.
+
+The "exported" attribute within the AndroidManifest.xml file specifies whether an activity, service, 
+or other component of the application is accessible to components of other applications or to the system itself. 
+When set to "true," it indicates that the component can be accessed externally, meaning it is exposed to other apps 
+or system components and can be invoked or interacted with by them. Conversely, setting "exported" to "false" means 
+the component is not accessible externally, limiting its usage to within the application's own context. 
+Proper management of the "exported" attribute is crucial for maintaining the security and integrity of the 
+Android application, ensuring that sensitive functionalities are not inadvertently exposed to unauthorized components or applications.
