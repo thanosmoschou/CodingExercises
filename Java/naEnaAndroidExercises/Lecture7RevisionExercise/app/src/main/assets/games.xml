@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<games>
+    <game>
+        <teams>Hearts - PAOK</teams>
+        <score>1 - 2</score>
+    </game>
+    <game>
+        <teams>Olympiakos - Cukaricki</teams>
+        <score>3 - 1</score>
+    </game>
+    <game>
+        <teams>Antwerp - AEK</teams>
+        <score>1 - 0</score>
+    </game>
+    <game>
+        <teams>Braga - Panathinaikos</teams>
+        <score>2 - 1</score>
+    </game>
+</games>
