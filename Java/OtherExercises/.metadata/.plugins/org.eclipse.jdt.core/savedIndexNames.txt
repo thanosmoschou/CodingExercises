@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\thano\Desktop\THANOS CODING PORTFOLIO\Java Coding\Other Exercises\revision for exams\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index

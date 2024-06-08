@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-gr">
+    <head>
+        <title>Αλλαγή Διαστάσεων Εικόνας</title>
+        <meta charset="utf-8">
+        <style>
+            header h1{
+                display: flex;
+                justify-content: center;
+
+            }
+
+            #increaseImage{
+                display: flex;
+                width: 400px;
+                margin: auto;
+            }
+
+            .class1{
+                width: 200px;
+                margin: auto;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .class2{
+                width: 200px;
+                margin: auto;
+                display: flex;
+                justify-content: space-around;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script>
+            function changeSize(option)
+            {
+                var image = document.getElementById("increaseImage");
+                
+                if(option == 1)
+                {
+                    let newWidth = image.clientWidth + 10;
+                    image.style.width = newWidth + "px"; //in css we need a value in px. It is not enough to increase the value and assign it to the height property just like that. We need a string that contains px
+                }
+                else
+                {
+                    let newHeight = image.clientHeight + 10;
+                    image.style.height = newHeight + "px";
+                }
+
+            }
+        </script>
+        
+        <header>
+            <h1>Αλλαγή Διαστάσεων Εικόνας</h1>
+        </header>
+
+        <figcaption>
+            <img id="increaseImage" src="homer.png" alt="homer">
+        </figcaption>
+
+        <div class="class1">
+            <h3>Πλάτος</h3>
+            <h3>Ύψος</h3>    
+        </div>
+
+        <div class="class2">
+            <button type="button" onclick="changeSize(1)">+10 pixel</button>
+            <button type = "button" onclick="changeSize(2)">+10 pixel</button>
+        </div>
+        
+        
+    </body>
+</html>

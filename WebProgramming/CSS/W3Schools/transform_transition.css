@@ -1,0 +1,236 @@
+/*
+CSS transforms allow you to move, rotate, scale, and skew elements.
+
+transform
+
+With the CSS transform property you can use the following 2D transformation methods:
+
+translate()
+rotate()
+scaleX()
+scaleY()
+scale()
+skewX()
+skewY()
+skew()
+matrix()
+
+The translate() method moves an element from its current position (according to the parameters given for the X-axis and the Y-axis).
+
+The following example moves the <div> element 50 pixels to the right, and 100 pixels down from its current position:
+
+Example
+div {
+  transform: translate(50px, 100px);
+}
+
+
+The rotate() method rotates an element clockwise or counter-clockwise according to a given degree.
+
+The following example rotates the <div> element clockwise with 20 degrees:
+
+Example
+div {
+  transform: rotate(20deg);
+}
+
+Using negative values will rotate the element counter-clockwise.
+
+The following example rotates the <div> element counter-clockwise with 20 degrees:
+
+Example
+div {
+  transform: rotate(-20deg);
+}
+
+
+The scale() method increases or decreases the size of an element (according to the parameters given for the width and height).
+
+The following example increases the <div> element to be two times of its original width, and three times of its original height: 
+
+Example
+div {
+  transform: scale(2, 3);
+}
+
+
+The following example decreases the <div> element to be half of its original width and height: 
+
+Example
+div {
+  transform: scale(0.5, 0.5);
+}
+
+
+The scaleX() method increases or decreases the width of an element.
+
+The following example increases the <div> element to be two times of its original width: 
+
+Example
+div {
+  transform: scaleX(2);
+}
+
+The following example decreases the <div> element to be half of its original width: 
+
+Example
+div {
+  transform: scaleX(0.5);
+}
+
+
+The scaleY() method increases or decreases the height of an element.
+Same way as scaleX()
+
+
+The skewX() method skews an element along the X-axis by the given angle.
+
+The following example skews the <div> element 20 degrees along the X-axis:
+
+Example
+div {
+  transform: skewX(20deg);
+}
+
+
+The skewY() method skews an element along the Y-axis by the given angle.
+
+The skew() method skews an element along the X and Y-axis by the given angles.
+If the second parameter is not specified, it has a zero value.
+
+The matrix() method combines all the 2D transform methods into one.
+
+The matrix() method take six parameters, containing mathematic functions, which allows you to rotate, scale, move (translate), and skew elements.
+
+The parameters are as follow: matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+
+Example
+div {
+  transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
+*/
+
+
+div{
+    background-color: green;
+    color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    /* transform: translate(50px, 100px); */
+    /* transform: rotate(10deg); */
+    /* transform: rotate(-10deg); */
+    /* transform: scale(0.8, 2); */
+    /* transform: scaleX(2); */
+    /* transform: scaleY(3); */
+    /* transform: skewX(20deg); */
+    /* transform: skewY(20deg); */
+    width: 200px;
+    height: 400px;
+    transition: width 2s, transform 2s;
+    transition-timing-function: ease-in-out;
+    /* transition-delay: 1s; */
+
+}
+
+div:hover{
+    width: 400px;
+    /* height: 200px; */
+    transform: rotate(360deg);
+}
+
+
+/*
+transition
+transition-delay
+transition-duration
+transition-property
+transition-timing-function
+
+
+To create a transition effect, you must specify two things:
+
+the CSS property you want to add an effect to
+the duration of the effect
+Note: If the duration part is not specified, the transition will have no effect, because the default value is 0.
+
+The following example shows a 100px * 100px red <div> element. The <div> element has also specified a transition effect for the width property, with a duration of 2 seconds:
+
+Example
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+
+The transition effect will start when the specified CSS property (width) changes value.
+
+Now, let us specify a new value for the width property when a user mouses over the <div> element:
+
+Example
+div:hover {
+  width: 300px;
+}
+
+Notice that when the cursor mouses out of the element, it will gradually change back to its original style.
+
+Change Several Property Values
+The following example adds a transition effect for both the width and height property, with a duration of 2 seconds for the width and 4 seconds for the height:
+
+Example
+div {
+  transition: width 2s, height 4s;
+}
+
+
+Specify the Speed Curve of the Transition
+The transition-timing-function property specifies the speed curve of the transition effect.
+
+The transition-timing-function property can have the following values:
+
+ease - specifies a transition effect with a slow start, then fast, then end slowly (this is default)
+linear - specifies a transition effect with the same speed from start to end
+ease-in - specifies a transition effect with a slow start
+ease-out - specifies a transition effect with a slow end
+ease-in-out - specifies a transition effect with a slow start and end
+cubic-bezier(n,n,n,n) - lets you define your own values in a cubic-bezier function
+
+
+The transition-delay property specifies a delay (in seconds) for the transition effect.
+
+The following example has a 1 second delay before starting:
+
+Example
+div {
+  transition-delay: 1s;
+}
+
+
+
+Transition + Transformation
+The following example adds a transition effect to the transformation:
+
+Example
+div {
+  transition: width 2s, height 2s, transform 2s;
+}
+
+
+The CSS transition properties can be specified one by one, like this:
+
+Example
+div {
+  transition-property: width;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+}
+or by using the shorthand property transition:
+
+Example
+div {
+  transition: width 2s linear 1s;
+}
+
+*/

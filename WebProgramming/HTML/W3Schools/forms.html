@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en-gr">
+    <head>
+        <title>A random title</title>
+        <meta charset="utf-8">
+
+    </head>
+
+    <body>
+        <!--
+            An HTML form is used to collect user input. The user input is most often sent to a server for processing.
+
+            The HTML <form> element is used to create an HTML form for user input:
+
+            <form>
+            .
+            form elements
+            .
+            </form>
+
+            The <form> element is a container for different types of input elements, such as: text fields, checkboxes, radio buttons, submit buttons, etc.
+
+            The HTML <input> element is the most used form element.
+
+            An <input> element can be displayed in many ways, depending on the type attribute.
+
+            Here are some examples:
+
+            Type	                Description
+            <input type="text">	    Displays a single-line text input field
+            <input type="radio">	Displays a radio button (for selecting one of many choices)
+            <input type="checkbox">	Displays a checkbox (for selecting zero or more of many choices)
+            <input type="submit">	Displays a submit button (for submitting the form)
+            <input type="button">	Displays a clickable button
+
+
+            The <input type="text"> defines a single-line input field for text input.
+            
+            Note: The form itself is not visible. Also note that the default width of an input field is 20 characters.
+
+            The <label> tag defines a label for many form elements.
+
+            The <label> element is useful for screen-reader users, because the screen-reader 
+            will read out loud the label when the user focus on the input element.
+
+            The <label> element also help users who have difficulty clicking on very small regions 
+            (such as radio buttons or checkboxes) - because when the user clicks the text within the 
+            <label> element, it toggles the radio button/checkbox.
+
+            The for attribute of the <label> tag should be equal to the id attribute of the <input> element to bind them together.
+
+            The <input type="radio"> defines a radio button.
+            Radio buttons let a user select ONE of a limited number of choices.
+
+            The <input type="checkbox"> defines a checkbox.
+            Checkboxes let a user select ZERO or MORE options of a limited number of choices.
+
+            The <input type="submit"> defines a button for submitting the form data to a form-handler.
+
+            The form-handler is typically a file on the server with a script for processing input data.
+            The form-handler is specified in the form's action attribute.
+            Tip: If the action attribute is omitted, the action is set to the current page.
+
+            The target attribute specifies where to display the response that is received after submitting the form.
+
+            The target attribute can have one of the following values:
+
+            Value	    Description
+            _blank	    The response is displayed in a new window or tab
+            _self	    The response is displayed in the current window
+            _parent	    The response is displayed in the parent frame
+            _top	    The response is displayed in the full body of the window
+            framename	The response is displayed in a named iframe
+            The default value is _self which means that the response will open in the current window.
+
+            The method attribute specifies the HTTP method to be used when submitting the form data.
+
+            The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+
+            The default HTTP method when submitting form data is GET. 
+
+            Notes on GET:
+
+            Appends the form data to the URL, in name/value pairs
+            NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!)
+            The length of a URL is limited (2048 characters)
+            Useful for form submissions where a user wants to bookmark the result
+            GET is good for non-secure data, like query strings in Google
+            Notes on POST:
+
+            Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)
+            POST has no size limitations, and can be used to send large amounts of data.
+            Form submissions with POST cannot be bookmarked
+
+            Tip: Always use POST if the form data contains sensitive or personal information!
+
+            Notice that each input field must have a name attribute to be submitted.
+            If the name attribute is omitted, the value of the input field will not be sent at all.
+
+            The autocomplete attribute specifies whether a form should have autocomplete on or off.
+            When autocomplete is on, the browser automatically complete values based on values that the user has entered before.
+
+            The novalidate attribute is a boolean attribute.
+            When present, it specifies that the form-data (input) should not be validated when submitted.
+
+
+            List of All <form> Attributes
+            Attribute	            Description
+            accept-charset	        Specifies the character encodings used for form submission
+            action	                Specifies where to send the form-data when a form is submitted
+            autocomplete	        Specifies whether a form should have autocomplete on or off
+            enctype	                Specifies how the form-data should be encoded when submitting it to the server (only for method="post")
+            method	                Specifies the HTTP method to use when sending form-data
+            name	                Specifies the name of the form
+            novalidate	            Specifies that the form should not be validated when submitted
+            rel	                    Specifies the relationship between a linked resource and the current document
+            target	                Specifies where to display the response that is received after submitting the form
+
+
+            Form Elements
+
+            The HTML <form> element can contain one or more of the following form elements:
+
+            <input>
+            <label>
+            <select>
+            <textarea>
+            <button>
+            <fieldset>
+            <legend>
+            <datalist>
+            <output>
+            <option>
+            <optgroup>
+
+            The <input> element can be displayed in several ways, depending on the type attribute.
+            The <select> element defines a drop-down list
+                The <option> elements defines an option that can be selected.
+
+                By default, the first item in the drop-down list is selected.
+                To define a pre-selected option, add the selected attribute to the option
+                <option value="fiat" selected>Fiat</option>
+                
+                Use the size attribute to specify the number of visible values:
+                <select id="cars" name="cars" size="3">
+
+                Use the multiple attribute to allow the user to select more than one value:
+                <select id="cars" name="cars" size="4" multiple>
+            
+            The <textarea> element defines a multi-line input field (a text area):
+                The rows attribute specifies the visible number of lines in a text area.
+                The cols attribute specifies the visible width of a text area.
+                You can also define the size of the text area by using CSS
+
+
+            The <button> element defines a clickable button
+            Note: Always specify the type attribute for the button element. 
+            Different browsers may use different default types for the button element.
+
+            The <fieldset> element is used to group related data in a form.
+            The <legend> element defines a caption for the <fieldset> element.
+
+            The <datalist> element specifies a list of pre-defined options for an <input> element.
+            Users will see a drop-down list of the pre-defined options as they input data.
+            The list attribute of the <input> element, must refer to the id attribute of the <datalist> element.
+
+            Here are the different input types you can use in HTML:
+
+            <input type="button">
+            <input type="checkbox">
+            <input type="color">
+            <input type="date">
+            <input type="datetime-local">
+            <input type="email">
+            <input type="file">
+            <input type="hidden">
+            <input type="image">
+            <input type="month">
+            <input type="number">
+            <input type="password">
+            <input type="radio">
+            <input type="range">
+            <input type="reset">
+            <input type="search">
+            <input type="submit">
+            <input type="tel">
+            <input type="text">
+            <input type="time">
+            <input type="url">
+            <input type="week">
+            Tip: The default value of the type attribute is "text".
+
+
+        -->
+
+        <form autocomplete="on" novalidate>
+            <label for="fname">First Name</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last Name</label><br>
+            <input type="text" id="lname" name="lname">
+        </form>
+
+        <form action="file" method="get">
+            <label for="html">HTML</label><br>
+            <input type="radio" id="html" name="lovedLanguage"><br>
+            <label for="css">CSS</label><br>
+            <input type="radio" id="css" name="lovedLanguage">
+        </form>
+
+        <form action="a file" target="_blank">
+            <label for="html">HTML</label><br>
+            <input type="checkbox" id="html" name="lovedLanguage"><br>
+            <label for="css">CSS</label><br>
+            <input type="checkbox" id="css" name="lovedLanguage">
+            <input type="submit" value="Submit">
+        </form>
+
+        <form >
+            <label for="car">Select</label><br>
+            <select id="car" name="favCar" size="3" multiple>
+                <option value="volvo">volvo</option>
+                <option value="mercedes">mercedes</option>
+                <option value="fiat">fiat</option>
+                <option value="ford">ford</option>
+            </select>
+        </form>
+
+        <textarea name="message" rows="20" cols="40" style="width:100%;height:150%;">
+            Random text
+        </textarea>
+
+        <button type="button" onclick="alert('hello world')">Click</button>
+
+        <form action="file" method="get">
+            <fieldset>
+                <legend>Best Language</legend>
+                <label for="html">HTML</label><br>
+                <input type="radio" id="html" name="lovedLanguage"><br>
+                <label for="css">CSS</label><br>
+                <input type="radio" id="css" name="lovedLanguage">
+            </fieldset>
+        </form>
+
+        <!--
+            The input list attribute refers to a <datalist> element that contains pre-defined options for an <input> element.
+        -->
+        <form >
+            <input list="cars">
+            <datalist id="cars">
+                <option value="volvo">
+                <option value="mercedes">
+                <option value="fiat">
+                <option value="ford">
+            </datalist>
+        </form>
+
+        <!--
+            This chapter describes the different attributes for the HTML <input> element.
+
+            The value Attribute
+            The input value attribute specifies an initial value for an input field
+            <input type="text" id="fname" name="fname" value="John"><br>
+
+            The input readonly attribute specifies that an input field is read-only.
+
+            A read-only input field cannot be modified (however, a user can tab to it, highlight it, and copy the text from it).
+
+            The value of a read-only input field will be sent when submitting the form!
+
+            The input disabled attribute specifies that an input field should be disabled.
+
+            A disabled input field is unusable and un-clickable.
+
+            The value of a disabled input field will not be sent when submitting the form!
+
+        -->
+
+        <form action="file">
+            <label for="dat">Random label</label>
+            <input type="text" id="dat" name="d" value="Random" readonly>
+            <label for="det">Another random</label>
+            <input type="text" id="det" name="d" value="other" disabled>
+        </form>
+
+        <!--
+            The form Attribute
+            The input form attribute specifies the form the <input> element belongs to.
+
+            The value of this attribute must be equal to the id attribute of the <form> element it belongs to.
+
+            Example
+            An input field located outside of the HTML form (but still a part of the form):
+
+            <form action="/action_page.php" id="form1">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <input type="submit" value="Submit">
+            </form>
+
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" form="form1">
+        -->
+       
+
+        
+    </body>
+</html>

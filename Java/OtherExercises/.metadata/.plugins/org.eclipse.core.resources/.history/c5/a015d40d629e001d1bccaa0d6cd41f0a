@@ -1,0 +1,44 @@
+/*
+ * Author: Thanos Moschou
+ * Date: 01/2023
+ * Description: revision exercise in java
+ */
+
+package rev6;
+
+import java.util.ArrayList;
+
+import javax.swing.DefaultListModel;
+
+public class Main 
+{
+
+	public static void main(String[] args) 
+	{
+		Ship s1 = new Ship(3, "thanos");
+		Ship s2 = new Ship(5, "artemis");
+		
+		Bulk b1 = new Bulk("sdf", "Athens", 400);
+		Bulk b2 = new Bulk("afa", "Thessaloniki", 460);
+		Bulk b3 = new Bulk("gdfs", "Berlin", 300);
+		Bulk b4 = new Bulk("vdsdv", "Nicosia", 790);
+		
+		Refridgerator r1 = new Refridgerator("fsfs", "Germany", 56);
+		
+		ArrayList<Ship> ships = new ArrayList<>();
+		ships.add(s1);
+		ships.add(s2);
+		
+		
+		DefaultListModel<String> model = new DefaultListModel<>();
+		model.addElement(s1.getName());
+		model.addElement(s2.getName());
+		
+		//new MyFrame(s1);
+		//new MyFrame(s2);
+		
+		new MyFrame(model, ships);
+
+	}
+
+}

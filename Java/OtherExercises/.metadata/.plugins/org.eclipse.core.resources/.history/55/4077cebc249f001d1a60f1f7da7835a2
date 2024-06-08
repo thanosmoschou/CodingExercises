@@ -1,0 +1,25 @@
+import java.io.Serializable;
+
+public class Hotel implements Comparable<Hotel>, Serializable
+{
+	private String name;
+	
+	
+	public Hotel(String aName)
+	{
+		this.name = aName;
+	}
+	
+	
+	public String getName()
+	{
+		return name;
+	}
+
+
+	@Override
+	public int compareTo(Hotel o)
+	{
+		return this.getName().compareTo(o.getName());
+	}
+}

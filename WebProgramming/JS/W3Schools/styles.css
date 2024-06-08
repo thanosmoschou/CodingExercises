@@ -1,0 +1,45 @@
+nav{
+    background-color: aqua;
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 500px;
+    height: 30px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+}
+
+header h1{
+    color: rgb(114, 255, 7);
+}
+
+header p{
+    color: rgb(19, 25, 217);
+}
+
+/* body{
+    background-image: url("office-desk-computer-light.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+} */
+
+div{
+    display: flex;
+    flex-direction: column;
+}
+
+div > button{
+    width: 80px;
+}

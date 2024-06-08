@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1642696967 source:c:\users\anatoliko\desktop\a10f9project\a10f9.c
+	<stdio.h>
+	"genlib.h"
+	"simpio.h"
+	<string.h>
+	<ctype.h>
+	<stdlib.h>
+

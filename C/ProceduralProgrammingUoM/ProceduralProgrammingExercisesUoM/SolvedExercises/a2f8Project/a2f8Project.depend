@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1642355783 source:c:\users\anatoliko\desktop\a2f8project\a2f8.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<stdlib.h>
+

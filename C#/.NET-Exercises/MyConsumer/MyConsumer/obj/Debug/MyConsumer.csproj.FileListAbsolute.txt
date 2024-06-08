@@ -1,0 +1,2 @@
+C:\Users\thano\Desktop\.NET Exercises\MyConsumer\MyConsumer\obj\Debug\MyConsumer.csproj.AssemblyReference.cache
+C:\Users\thano\Desktop\.NET Exercises\MyConsumer\MyConsumer\obj\Debug\MyConsumer.csproj.CoreCompileInputs.cache

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enter the title here</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <!--
+            JS Showcase
+
+            ->Lesson 5
+
+            How to run JS
+
+            Internal
+
+            <script>code ... </script>
+
+            You can have it wherever you want inside the html document and the code is been 
+            executed sequentially
+
+
+            External
+
+            Create a .js file with your js code without <script> tags
+            Then link the current html document with the js file
+            with <script src="source of js file"></script>
+
+            Inline
+            <p onclick="var y; alert(y);">random paragraph</p>
+
+
+
+            Syntax is the same with C language
+            if, else if, else, for, while, do while, switch
+
+            Create a variable
+
+            var x;
+
+            you can also assign a value when creating a variable
+
+            var x = 10;
+
+            The naming follows the same standards like other languages, it is allowed names start with _ or $ but is not allowed to name
+            variables with reserved words
+
+            Primitive values:
+            number, strings, boolean, null, undefined
+
+            Complex values:
+            array, plain object, function...
+
+
+            Numbers
+            1, 2.3 etc
+
+            Special numbers: NaN, Infinity, -Infinity
+
+            Strings
+            Use '' or ""
+            Same escape characters like C -> \n, \t ...
+
+            When you have a number and then a string concatenation happens
+            1+2+'4'
+
+            CHECK ALSO THIS WITH GRAVE ACCENT
+            var s = "hello";
+            console.log(`Program: {$s} world`);
+
+            Boolean
+            true, false, 
+
+            Falsy: false, 0, -0, NaN, '', null, undefined
+            Truthy: all the other except empty arrays and objects
+
+            Binary Logical Operators: &&, || 
+            Equality check: ==, ===
+            == -> Check if the values are the same -> 0 ==  false
+            === -> Check if the values and data types are the same -> 0 === false
+
+
+            KEEP IN MIND
+            undefined: no value, no existence
+            null: no object or emptiness
+
+            ALSO KEEP IN MIND
+            Primitive values are compared via their value
+            Complex values(like objects) are references to memory addresses and those references are compared
+
+
+            Arrays
+
+            One dimensional
+            var ar = [1, 4, 'hello'];
+            var b = [];
+
+            Two dimensional
+            var ar = [[1,2], [3,4], [5,6]];
+            var b = [[],[]];
+
+            Dynamic increment
+            var e = ['a', 'b'];
+            e[25] = z; //e[2] - e[24] undefined
+
+
+            Creating objects
+            
+            var o = {
+                name: "thanos",
+                lastname: "moschou",
+                age: 20,
+                printInfo()
+                {
+                    console.log(this.name + this.lastname + this.age);
+                }
+            };
+
+            //This is similar to dictionaries in python
+
+            Access the properties of an object like this
+            o.name;
+            o["name"]; ->this looks like python
+
+
+            Functions
+
+            function myFunc(arg1, arg2)
+            {
+                console.log("Sum of " + arg1 + " and " + arg2 + " is: " + (arg1 + arg2));
+            }
+
+
+            KEEP IN MIND:
+            Fundamental objects:
+            Math, JSON, Number, Strings, Boolean, Array, Object, Function, Date...
+            Error objects
+
+
+            OPERATORS IN JS
+
+            Assignment operators
+            Operator	Description
+            +	        Addition
+            -	        Subtraction
+            *	        Multiplication
+            **	        Exponentiation (ES2016)
+            /	        Division
+            %	        Modulus (Division Remainder)
+            ++	        Increment
+            --	        Decrement
+
+            Comparison operators
+            Operator    Description
+            ==	        equal to
+            ===	        equal value and equal type
+            !=	        not equal
+            !==	        not equal value or not equal type
+            >	        greater than
+            <	        less than
+            >=	        greater than or equal to
+            <=	        less than or equal to
+            ?	        ternary operator
+
+
+            =======================================
+            
+            ->Lesson 6
+
+            Browser Object Model
+
+            There is a global object named window which has a big amount of properties
+
+            window object properties
+
+            document,  history, location, navigator, console, localStorage, sessionStorage, screen, innerHeight, innerWidth, pageXOffset, pageYOffset
+
+            window object methods
+
+            print(),  getSelection(), matchMedia(), setInterval(), setTimeout(), getComputedStyle()
+
+
+            location object
+
+            href, hostname, pathname, protocol, assign, replace, reload
+
+
+            document object methods
+
+            getElementById(stringID), querySelector(stringsSelector) -> access a single element
+            
+            getElementsByClassName(stringClassName), getElementsByTagName(stringTagName), getElementsByName(stringName), querySelectorAll(stringSelector)
+
+
+            const elem = document.getElementById('myNiceID');
+            console.log(document.querySelector('div > p').nodeName); ->this will return all the p elements that are kids of div element
+            const third = document.getElementsByClassName('red test')[2];
+            const allPars = document.getElementsByTagName('p');
+            const myRadioButtons = document.getElementsByName('radioName');
+            const matches = document.querySelectorAll('div.note, div.alert');
+
+
+            Event Listeners
+
+            example
+
+            const button = document.querySelector("button");
+
+            button.addEventListener('click', function (avt) {
+                this.innerHTML = "hello";
+            }, false);
+
+
+        -->
+
+    </body>
+</html>

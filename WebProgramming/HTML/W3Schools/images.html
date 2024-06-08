@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <title>Random title</title>
+        <meta charset="utf-8">
+        <style>
+            img {
+                width:300px;
+                height:300px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!--
+            The HTML <img> tag is used to embed an image in a web page.
+
+            Images are not technically inserted into a web page; images are linked to web pages. 
+            The <img> tag creates a holding space for the referenced image.
+
+            The <img> tag is empty, it contains attributes only, and does not have a closing tag.
+
+            The <img> tag has two required attributes:
+
+            src - Specifies the path to the image
+            alt - Specifies an alternate text for the image
+
+            <img src="url" alt="alternatetext">
+
+            The required src attribute specifies the path (URL) to the image.
+
+            Note: When a web page loads, it is the browser, at that moment, that gets the image from a web server and inserts 
+            it into the page. Therefore, make sure that the image actually stays in the same spot in relation to the web page, 
+            otherwise your visitors will get a broken link icon. The broken link icon and the alt text are shown if the browser 
+            cannot find the image.
+
+            The required alt attribute provides an alternate text for an image, 
+            if the user for some reason cannot view it (because of slow connection, 
+            an error in the src attribute, or if the user uses a screen reader).
+
+            The value of the alt attribute should describe the image
+            <img src="icon.jpeg" alt="A picture of Iron Man">
+            If a browser cannot find an image, it will display the value of the alt attribute
+
+            You can use the style attribute to specify the width and height of an image.
+            <img src="path" alt="something" style="width:200px;height:200px;">
+
+            Alternatively, you can use the width and height attributes
+            The width and height attributes always define the width and height of the image in pixels.
+
+            <img src="path" alt="something" width="200" height="400">
+
+            Always specify the width and height of an image. If width and height are not specified, 
+            the web page might flicker while the image loads.
+            The width, height, and style attributes are all valid in HTML.
+            However, we suggest using the style attribute. It prevents styles sheets from changing the size of images
+
+            If you have your images in a sub-folder, you must include the folder name in the src attribute:
+            <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
+
+            Some web sites point to an image on another server.
+
+            To point to an image on another server, you must specify an absolute (full) URL in the src attribute:
+
+            Example
+            <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+
+            External images might be under copyright. If you do not get permission to use it, you may be in violation of copyright laws. 
+            In addition, you cannot control external images; they can suddenly be removed or changed.
+
+            HTML allows animated GIFs:
+
+            Example
+            <img src="programming.gif" alt="Computer Man" style="width:48px;height:48px;">
+
+            To use an image as a link, put the <img> tag inside the <a> tag:
+
+            Example
+            <a href="default.asp">
+            <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+            </a>
+
+            Use the CSS float property to let the image float to the right or to the left of a text:
+
+            <p><img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+            The image will float to the right of the text.</p>
+
+            <p><img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+            The image will float to the left of the text.</p>
+        -->
+        
+        <img src="C:\Users\thano\Pictures\Wallpapers\street_city_sunset_160055_1920x1080.jpg" alt="City">
+
+        <br>
+        <p><img src="C:\Users\thano\Pictures\Wallpapers\street_city_sunset_160055_1920x1080.jpg" alt="City" style="width:200px;height:200px;float:right">
+        A random text</p>
+
+        <!--
+            Chapter Summary
+            Use the HTML <img> element to define an image
+            Use the HTML src attribute to define the URL of the image
+            Use the HTML alt attribute to define an alternate text for an image, if it cannot be displayed
+            Use the HTML width and height attributes or the CSS width and height properties to define the size of the image
+            Use the CSS float property to let the image float to the left or to the right
+        -->
+
+
+    </body>
+</html>

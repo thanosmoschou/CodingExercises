@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1641628880 source:c:\users\anatoliko\desktop\a14f7project\a14f7.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	<math.h>
+	<stdlib.h>
+	<time.h>
+

@@ -1,0 +1,9 @@
+Keep in mind that:
+
+If you create a .java file with some code inside that modifies a file then:
+
+If you specify just a filename like "file.txt"
+it will be created in the same folder with your .java file.
+
+If you create an Eclipse project and you specify just a filename like "file.txt"
+it will be created in the project's folder (not inside the src folder)

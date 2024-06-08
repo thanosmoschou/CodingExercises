@@ -1,0 +1,30 @@
+/*
+The calc() function performs a calculation to be used as the property value.
+calc(expression)
+
+Value	    Description
+expression	Required. A mathematical expression. The result will be used as the value.
+The following operators can be used: + - * /
+
+width: calc(100% - 100px);
+
+The max() function uses the largest value, from a comma-separated list of values, as the property value.
+
+CSS Syntax
+max(value1, value2, ...)
+Value	                Description
+value1, value2, ...	    Required. A list of comma-separated values - where the largest value is chosen
+width: max(50%, 300px);
+
+The min() function uses the smallest value, from a comma-separated list of values, as the property value.
+
+CSS Syntax
+min(value1, value2, ...)
+Value	                Description
+value1, value2, ...	    Required. A list of comma-separated values - where the smallest value is chosen
+
+width: min(50%, 300px);
+
+
+
+*/

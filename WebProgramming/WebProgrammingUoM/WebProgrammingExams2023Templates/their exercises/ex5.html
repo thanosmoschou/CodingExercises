@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>random title</title>
+        <style>
+            #p1{
+                border: 2px solid black; /*Border width border style border color*/
+                padding: 40px;
+                margin: auto;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <p id = "p1">a random paragraph</p>
+
+        <script>
+            function changeStatus(mode)
+            {
+                if(mode == 1)
+                    document.body.style.backgroundColor = 'yellow';
+                else if(mode == 2)
+                    document.body.style.backgroundColor = 'white';
+                else if(mode == 3)
+                    document.getElementById("p1").style.backgroundColor = 'yellow';
+                else
+                    document.getElementById("p1").style.backgroundColor = 'white';
+            }
+        </script>
+
+
+        <div>
+            <button onclick=changeStatus(1) style="margin-top: 10px;">Yellow page background</button><br>
+            <button onclick=changeStatus(2) style="margin-top: 10px;">White page background</button><br>
+            <button onclick=changeStatus(3) style="margin-top: 10px;">Yellow paragraph background</button><br>
+            <button onclick=changeStatus(4) style="margin-top: 10px;">White paragraph background</button>
+        </div>
+    </body>
+</html>

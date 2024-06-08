@@ -1,0 +1,3 @@
+b 1.4 40 Total Cost: 56.0
+d 1.9 30 Total Cost: 57.0
+Total cost: 113.0

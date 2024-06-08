@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enter the title here</title>
+        <meta charset="utf-8">
+        <style>
+            h1, h2{
+                text-align: center;
+            }
+
+            img{
+                width: 400px;
+                height: 200px;
+            }
+
+            #eikonesKirios, #eikonesSalates{
+                border: 3px solid black;
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            #kiriosPiata, #timesKirios, #salates, #timesSalata{
+                display: flex;
+                justify-content: space-around;
+                margin-top: 10px;
+            }
+
+            #sinopsi{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                width: 300px;
+                margin:auto;
+                font-style: italic;
+                font-size: x-large;
+            }
+        
+        </style>
+    </head>
+
+    <body>
+        <script>
+            var telikiTimi = 0;
+            var timiKirios = 0;
+            var timiSalata = 0;
+
+            function paraggelia(name, price, eidos)
+            {
+                var sinoloParaggelias = document.getElementById('sinolo');
+
+                if(eidos === "kirios")
+                {
+                    var kirios = document.getElementById("kir");
+                    kirios.innerHTML = "Kirios: " + name + " Timh: " + price;
+                    timiKirios = price;
+                }
+                else
+                {
+                    var salata = document.getElementById("sal");
+                    salata.innerHTML = "Salata: " + name + " Timh: " + price;
+                    timiSalata = price;
+                }
+
+                telikiTimi = timiKirios + timiSalata;
+                sinoloParaggelias.innerHTML = "Sinolo Paraggelias: " + telikiTimi;
+            }
+        </script>
+
+        <h1>My Restaurant</h1>
+
+        <hr>
+        <h2>Select a main dish and a salad</h2>
+
+        <div id="eikonesKirios">
+            <img src="gemista-argiros.jpg" alt="gemista">
+            <img src="mprizola.jpg" alt="mprizola">
+            <img src="diavasi.jpg" alt="gyros">
+        </div>
+
+        <div id="kiriosPiata">
+            <button onclick="paraggelia('gemista', 12, 'kirios')">Gemista</button>
+            <button onclick="paraggelia('mprizola', 19, 'kirios')">Mprizola</button>
+            <button onclick="paraggelia('gyros', 7, 'kirios')">Giros</button>
+        </div>
+        
+        <div id="timesKirios">
+            <p>Price: 12€</p>
+            <p>Price: 19€</p>
+            <p>Price: 7€</p>
+        </div>
+
+        <div id="eikonesSalates">
+            <img src="ceasars.jpg" alt="ceasars">
+            <img src="xoriatiki.jpg" alt="xoriatiki">
+            <img src="chef.jpg" alt="chef">
+        </div>
+
+        <div id="salates">
+            <button onclick="paraggelia('ceasars', 9, 'salata')">Ceasars</button>
+            <button onclick="paraggelia('xoriatiki', 12, 'salata')">Xoriatiki</button>
+            <button onclick="paraggelia('chef', 6, 'salata')">Chef</button>
+        </div>
+        
+        <div id="timesSalata">
+            <p>Price: 9€</p>
+            <p>Price: 12€</p>
+            <p>Price: 6€</p>
+        </div>
+
+        <div id="sinopsi">
+            <p>Sinopsi Paraggelias</p>
+            <ul>
+                <li id="kir">Kirios: </li>
+                <li id="sal">Salata: </li>
+            </ul>
+
+            <p id="sinolo">Sinolo paraggelias: </p>
+        </div>
+
+    </body>
+</html>

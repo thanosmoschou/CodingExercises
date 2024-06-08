@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-gr">
+    <head>
+        <title>H epixeirhsh mou</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="utf=8">
+    </head>
+    <body>
+        <script>
+            var xristis = "thanos";
+            var password = "1234";
+
+            function check()
+            {
+                let inputName = document.getElementById("k").value;
+                let inputPasswd = document.getElementById("p").value;
+
+                if(inputName.length == 0 || inputPasswd.length == 0)
+                    window.alert("Empty values");
+                else if(inputName === xristis && inputPasswd === password)
+                    window.alert("Correct");
+                else
+                    window.alert("Wrong");
+            }
+        </script>
+
+        <header>
+            <h2>Sinergeio Autokinhtwn</h2>
+            <a href="#">Arxiki | </a>
+            <a href="#">Radevou</a>
+        </header>
+
+        <nav>
+            <a href="#">Radevou</a><br>
+            <a href="#">Katagrafi</a>
+
+            <p>Kwdikos ipallilou:</p>
+            <input type="text" name="fname" id="k">
+
+            <p>Kwdikos:</p>
+            <input type="password" name="fpass" id="p"><br>
+            <button onclick=check()>Sindesi</button>
+        </nav>
+
+        <main>
+            <article>
+                <img src="sinergeioVaggelas.webp" alt="Sinergeio o Vaggelas">
+            </article>
+
+            <article>
+                <h2>Ta panta gia to autokinito</h2>
+                <p>Iaso kokla call me at 6944444444</p>
+            </article>
+        </main>
+       
+
+        <footer>
+            <a href="#">Arxiki | </a>
+            <a href="#">Radevou</a>
+            <p>Athanasios Moschou ics22020</p>
+        </footer>
+    </body>
+</html>

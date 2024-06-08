@@ -1,0 +1,152 @@
+/*This is how comments are created*/
+
+/*Simple selectors*/
+/*Based on the name of the element*/
+
+/*All the h1 elements will be styled like this*/
+h1{
+    font-weight: normal;
+    color: lightblue;
+}
+
+/*Id Selector
+
+The id selector uses the id attribute of an HTML element to select a specific element.
+The id of an element is unique within a page, so the id selector is used to select one unique element!
+To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+The CSS rule below will be applied to the HTML element with id="myID": 
+Note: An id name cannot start with a number!
+
+*/
+
+#myID{
+    background-color: lightseagreen;
+    color: blueviolet;
+}
+
+/*Class selector
+
+The class selector selects HTML elements with a specific class attribute.
+To select elements with a specific class, write a period (.) character, followed by the class name.
+
+You can also specify that only specific HTML elements should be affected by a class.
+
+HTML elements can also refer to more than one class.
+Note: A class name cannot start with a number!
+
+
+
+*/
+
+.myClass{
+    text-align: center;
+    background-color: peru;
+    color: black;
+}
+
+p.myClass{
+    color:blue;
+}
+
+.mySecondClass{
+    border: 3px solid black;
+}
+
+/*
+Universal Selector
+The universal selector (*) selects all HTML elements on the page.
+
+The CSS rule below will affect every HTML element on the page: 
+
+* {
+  text-align: center;
+  color: blue;
+}
+
+*/
+
+/*
+Grouping Selector
+*/
+
+h2, h3{
+    background-color: cyan;
+}
+
+/*
+It is possible to style HTML elements that have specific attributes or attribute values.
+
+The [attribute] selector is used to select elements with a specified attribute.
+
+The following example selects all <a> elements with a target attribute:
+
+Example
+a[target] {
+  background-color: yellow;
+}
+
+The [attribute="value"] selector is used to select elements with a specified attribute and value.
+
+The following example selects all <a> elements with a target="_blank" attribute:
+
+Example
+a[target="_blank"] {
+  background-color: yellow;
+}
+
+The [attribute~="value"] selector is used to select elements with an attribute value containing a specified word.
+
+The following example selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower":
+
+Example
+[title~="flower"] {
+  border: 5px solid yellow;
+}
+The example above will match elements with title="flower", title="summer flower", and title="flower new", but not title="my-flower" or title="flowers".
+
+The [attribute|="value"] selector is used to select elements with the specified attribute, whose value can be exactly the specified value, or the specified value followed by a hyphen (-).
+
+Note: The value has to be a whole word, either alone, like class="top", or followed by a hyphen( - ), like class="top-text".
+
+Example
+[class|="top"] {
+  background: yellow;
+}
+
+The [attribute^="value"] selector is used to select elements with the specified attribute, whose value starts with the specified value.
+
+The following example selects all elements with a class attribute value that starts with "top":
+
+Note: The value does not have to be a whole word!
+
+Example
+[class^="top"] {
+  background: yellow;
+}
+
+The [attribute$="value"] selector is used to select elements whose attribute value ends with a specified value.
+
+The following example selects all elements with a class attribute value that ends with "test":
+
+Note: The value does not have to be a whole word!  
+
+Example
+[class$="test"] {
+  background: yellow;
+}
+
+The [attribute*="value"] selector is used to select elements whose attribute value contains a specified value.
+
+The following example selects all elements with a class attribute value that contains "te":
+
+Note: The value does not have to be a whole word!  
+
+Example
+[class*="te"] {
+  background: yellow;
+}
+
+The attribute selectors can be useful for styling forms without class or ID
+
+*/

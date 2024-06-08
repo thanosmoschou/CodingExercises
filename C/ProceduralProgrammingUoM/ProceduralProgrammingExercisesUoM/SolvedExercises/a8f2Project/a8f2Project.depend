@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1635700759 source:c:\users\anatoliko\desktop\uom-па.лай\пяоптувиайес споудес\1О етос\а еналгмо\диадийастийос пяоцяаллатислос\еБДОЛАДИАъЕР АСЙчСЕИР ПОУ щКУСА\a8f2project\a8f2.c
+	<stdio.h>
+	"genlib.h"
+	"simpio.h"
+
+1635525745 source:c:\users\anatoliko\desktop\a8f2project\a8f2.c
+	<stdio.h>
+	"genlib.h"
+	"simpio.h"
+

@@ -1,0 +1,49 @@
+/*
+ * Author: Thanos Moschou
+ * Date: 01/2023
+ * Description: revision exercise in java
+ */
+
+package rev6;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class MyFrame2 extends JFrame
+{
+	private DefaultListModel model = null;
+	
+	private JPanel panel = new JPanel();
+	
+	private JTextField codeField = new JTextField("Add the code of the container");
+	private JTextField destinationField = new JTextField("Add the destination of the container");
+	private JTextField weightField = new JTextField("Add the weight of the container");
+	private JTextField powerField = new JTextField("Add the power of the refridgerator here");
+	private JButton createBulkButton = new JButton("Create Bulk");
+	private JButton createRefridgerator = new JButton("Create Refridgerator");
+	private JList<Ship> shipList = null;
+
+	
+	public MyFrame2(DefaultListModel<Ship> aModel)
+	{
+		this.model = aModel;
+		shipList = new JList<Ship>(model);
+		
+		panel.add(shipList);
+		
+		
+		this.setContentPane(panel);
+		
+		
+		this.setVisible(true);
+		this.setSize(600, 600);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+	
+	
+}

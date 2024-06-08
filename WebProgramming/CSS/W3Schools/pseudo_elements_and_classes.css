@@ -1,0 +1,160 @@
+/*
+A pseudo-class is used to define a special state of an element.
+
+For example, it can be used to:
+
+Style an element when a user mouses over it
+Style visited and unvisited links differently
+Style an element when it gets focus
+
+Syntax
+
+selector:pseudo-class {
+  property: value;
+}
+
+Note: a:hover MUST come after a:link and a:visited in the CSS definition 
+in order to be effective! a:active MUST come after a:hover in the CSS definition 
+in order to be effective! Pseudo-class names are not case-sensitive.
+
+a:link {
+    color: #FF0000;
+  }
+  
+a:visited {
+color: #00FF00;
+}
+
+a:hover {
+color: #FF00FF;
+}
+
+a:active {
+color: #0000FF;
+}
+
+Pseudo-classes can be combined with HTML classes
+
+a.highlight:hover{
+    property:value;
+}
+
+The :first-child pseudo-class matches a specified element that is the first child of another element.
+
+In the following example, the selector matches any <p> element that is the first child of any element:
+
+Example
+p:first-child {
+  color: blue;
+}
+
+In the following example, the selector matches the first <i> element in all <p> elements:
+
+p i:first-child {
+  color: blue;
+}
+
+In the following example, the selector matches all <i> elements in <p> elements that are the first child of another element:
+
+p:first-child i {
+  color: blue;
+}
+
+The :lang pseudo-class allows you to define special rules for different languages.
+
+
+
+*/
+
+p:hover{
+    color: blue;
+}
+
+
+div p:first-child{
+    background-color: orange;
+}
+
+/*
+A CSS pseudo-element is used to style specified parts of an element.
+
+For example, it can be used to:
+
+Style the first letter, or line, of an element
+Insert content before, or after, the content of an element
+
+Syntax
+
+selector::pseudo-element {
+  property: value;
+}
+
+The ::first-line pseudo-element is used to add a special style to the first line of a text.
+Note: The ::first-line pseudo-element can only be applied to block-level elements.
+
+The following properties apply to the ::first-line pseudo-element:
+
+font properties
+color properties
+background properties
+word-spacing
+letter-spacing
+text-decoration
+vertical-align
+text-transform
+line-height
+clear
+
+The ::first-letter pseudo-element is used to add a special style to the first letter of a text.
+Note: The ::first-letter pseudo-element can only be applied to block-level elements.
+
+The following properties apply to the ::first-letter pseudo- element: 
+
+font properties
+color properties 
+background properties
+margin properties
+padding properties
+border properties
+text-decoration
+vertical-align (only if "float" is "none")
+text-transform
+line-height
+float
+clear
+
+Several pseudo-elements can also be combined.
+
+p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+
+p::first-line {
+  color: #0000ff;
+  font-variant: small-caps;
+}
+
+The ::before pseudo-element can be used to insert some content before the content of an element.
+
+The ::after pseudo-element can be used to insert some content after the content of an element.
+
+The ::marker pseudo-element selects the markers of list items.
+
+The ::selection pseudo-element matches the portion of an element that is selected by a user.
+
+All CSS Pseudo Elements
+Selector	    Example	            Example description
+::after	        p::after	        Insert something after the content of each <p> element
+::before	    p::before	        Insert something before the content of each <p> element
+::first-letter	p::first-letter	    Selects the first letter of each <p> element
+::first-line	p::first-line	    Selects the first line of each <p> element
+::marker	    ::marker	        Selects the markers of list items
+::selection	    p::selection	    Selects the portion of an element that is selected by a user
+
+
+*/
+
+p::first-line{
+    color: yellowgreen;
+}

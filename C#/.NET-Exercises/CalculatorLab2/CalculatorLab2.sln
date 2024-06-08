@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorLab2", "CalculatorLab2\CalculatorLab2.csproj", "{DB86CC37-100B-4CD8-8CCC-7DAB7DCFC970}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB86CC37-100B-4CD8-8CCC-7DAB7DCFC970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB86CC37-100B-4CD8-8CCC-7DAB7DCFC970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB86CC37-100B-4CD8-8CCC-7DAB7DCFC970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB86CC37-100B-4CD8-8CCC-7DAB7DCFC970}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD197109-1EAB-49B5-A642-20BE58666A53}
+	EndGlobalSection
+EndGlobal
