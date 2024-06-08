@@ -1,0 +1,22 @@
+Download javafx sdk from the website. Store the folder in a location you remember (for example desktop).
+Download e(fx)clipse plugin.
+
+
+You need to create a user library first:
+
+On eclipse:
+
+Open eclipse -> On the menu above select window -> preferences -> java -> build path -> user libraries -> new -> enter a name -> select the library you just created -> add external jars -> select the jars you want -> apply and close
+
+
+Let's create a project
+
+On eclipse menu select file -> new -> project -> javafx project -> give a name to your project -> delete module file -> enter the library you created as a user (right click on project -> build path -> add libraries -> user library -> select the one you created for javafx -> finish).
+Now you need to type something more: right click on the project -> run as -> run configurations -> on the menu in the central part of the page select arguments -> on the vm arguments section type: 
+--module-path "path\to\javafx\lib" --add-modules javafx.controls,javafx.fxml
+
+Change the path to the location of the javafx sdk you downloaded. You need to specify the path of the lib folder of javafx sdk.
+Press apply and run.
+
+If you have an error while initializing boot layer:
+right click on project -> build path -> configure build path -> java build path -> check that javafx sdk that comes with e(fx)clipse is in classpath and not in module path. If it is in the module path, move it to the class path by drag and drop.

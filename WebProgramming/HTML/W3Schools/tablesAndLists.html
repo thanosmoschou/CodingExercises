@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <title>Lets use tables and lists</title>
+        <meta charset="utf-8">
+
+        <style>
+            table, tr, td, th {
+                border: 2px solid black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!--
+            A table in HTML consists of table cells inside rows and columns.
+
+            Each table cell is defined by a <td> and a </td> tag.
+            td stands for table data.
+
+            Everything between <td> and </td> are the content of the table cell.
+
+            Note: A table cell can contain all sorts of HTML elements: text, images, lists, links, other tables, etc.
+
+            Each table row starts with a <tr> and ends with a </tr> tag.
+            tr stands for table row.
+
+            You can have as many rows as you like in a table; just make sure that the number of cells are the same in each row.
+            Note: There are times when a row can have less or more cells than another. You will learn about that in a later chapter.
+
+            Sometimes you want your cells to be table header cells. In those cases use the <th> tag instead of the <td> tag:
+            th stands for table header.
+            
+            By default, the text in <th> elements are bold and centered, but you can change that with CSS.
+
+            Tag	        Description
+            <table>	    Defines a table
+            <th>	    Defines a header cell in a table
+            <tr>	    Defines a row in a table
+            <td>	    Defines a cell in a table
+            <caption>	Defines a table caption
+            <colgroup>	Specifies a group of one or more columns in a table for formatting
+            <col>	    Specifies column properties for each column within a <colgroup> element
+            <thead>	    Groups the header content in a table
+            <tbody>	    Groups the body content in a table
+            <tfoot>	    Groups the footer content in a table
+
+            HTML tables can have different sizes for each column, row or the entire table.
+
+            Use the style attribute with the width or height properties to specify the size of a table, row or column.
+            To set the width of a table, add the style attribute to the <table> element:
+
+            Note: Using a percentage as the size unit for a width means how wide will this element be compared to its parent 
+            element, which in this case is the <body> element.
+
+            To set the size of a specific column, add the style attribute on a <th> or <td> element
+
+            To set the height of a specific row, add the style attribute on a table row element
+
+
+            Table headers are defined with th elements. Each th element represents a table cell.
+
+            To use the first column as table headers, define the first cell in each row as a <th> element
+            
+            You can have a header that spans over two or more columns.
+
+            To do this, use the colspan attribute on the <th> element:
+            <th colspan="2">Header</th>
+
+            You can add a caption that serves as a heading for the entire table.
+
+            To add a caption to a table, use the <caption> tag:
+            Note: The <caption> tag should be inserted immediately after the <table> tag.
+            
+            To make a cell span over multiple columns, use the colspan attribute:
+            Note: The value of the colspan attribute represents the number of columns to span.
+
+            To make a cell span over multiple rows, use the rowspan attribute:
+
+            The <colgroup> element is used to style specific columns of a table.
+            
+            If you want to style the two first columns of a table, use the <colgroup> and <col> elements.
+            The <colgroup> element should be used as a container for the column specifications.
+
+            Each group is specified with a <col> element.
+
+            The span attribute specifies how many columns that get the style.
+
+            The style attribute specifies the style to give the columns.
+
+            <table>
+                <colgroup>
+                    <col span="2" style="background-color: #D6EEEE">
+                </colgroup>
+                <tr>
+                    <th>MON</th>
+                    <th>TUE</th>
+                    <th>WED</th>
+                    <th>THU</th>
+                ...
+            </table>
+            
+            Note: The <colgroup> tag must be a child of a <table> element and should be placed before any other table elements, 
+            like <thead>, <tr>, <td> etc., but after the <caption> element, if present.
+
+            There is only a very limited selection of CSS properties that are allowed to be used in the colgroup:
+
+            width property
+            visibility property
+            background properties
+            border properties
+
+            If you want to style more columns with different styles, use more <col> elements inside the <colgroup>:
+
+            <table>
+                <colgroup>
+                    <col span="2" style="background-color: #D6EEEE">
+                    <col span="3" style="background-color: pink">
+                </colgroup>
+
+            If you want to style columns in the middle of a table, insert a "empty" <col> element (with no styles) for the columns before:
+
+            <colgroup>
+                <col span="3">
+                <col span="2" style="background-color: pink">
+            </colgroup>
+
+            You can hide columns with the visibility: collapse property:
+        -->
+
+        <table style="width:100%;height:300px;">
+            <caption>Table</caption>
+            <tr>
+                <th style="width:70%;">Header 1</th>
+                <th>Header 2</th>
+            </tr>
+            <tr style="height:200px;">
+                <td colspan="2">data 1</td>
+            </tr>
+            <tr>
+                <td>data 2</td>
+                <td>data 3</td>
+            </tr>
+            <tr>
+                <td rowspan="2">data 4</td>
+                <td>data 5</td>
+            </tr>
+            <tr>
+                <td>data 6</td>
+            </tr>
+        </table>
+
+        <!--
+            An unordered list starts with the <ul> tag. Each list item starts with the <li> tag.
+            The list items will be marked with bullets (small black circles) by default
+
+            The CSS list-style-type property is used to define the style of the list item marker. It can have one of the following values:
+
+            Value	Description
+            disc	Sets the list item marker to a bullet (default)
+            circle	Sets the list item marker to a circle
+            square	Sets the list item marker to a square
+            none	The list items will not be marked
+        -->
+
+        <ul style="list-style-type: circle;">
+            <li>Data 1</li>
+            <li>Data 2</li>
+            <li>Data 3</li>
+        </ul>
+
+        <!--
+            An ordered list starts with the <ol> tag. Each list item starts with the <li> tag.
+            The list items will be marked with numbers by default
+
+            The type attribute of the <ol> tag, defines the type of the list item marker:
+
+            Type	    Description
+            type="1"	The list items will be numbered with numbers (default)
+            type="A"	The list items will be numbered with uppercase letters
+            type="a"	The list items will be numbered with lowercase letters
+            type="I"	The list items will be numbered with uppercase roman numbers
+            type="i"	The list items will be numbered with lowercase roman numbers
+
+            By default, an ordered list will start counting from 1. If you want to start counting from a 
+            specified number, you can use the start attribute
+
+            Lists can be nested (list inside list)
+            Note: A list item (<li>) can contain a new list, and other HTML elements, like images and links, etc.
+
+            Use the HTML <ol> element to define an ordered list
+            Use the HTML type attribute to define the numbering type
+            Use the HTML <li> element to define a list item
+            Lists can be nested
+            List items can contain other HTML elements
+
+        -->
+
+        <ol type="A">   
+            <li>Data 1</li>
+            <li>Data 2</li>
+            <li>Data 3</li>
+        </ol>
+        
+        <ol type="A" start="4"> <!--We have uppercase letters and we start from the fourth letter which is D-->
+            <li>Data 4</li>
+            <li>Data 5</li>
+            <li>Data 6</li> 
+        </ol>
+
+        <ol>
+            <li>Data 7</li>
+            <li>Data 8</li>
+            <ol>
+                <li>Data 9</li>
+                <li>Data 10</li>
+            </ol>
+        </ol>
+
+        <!--
+            A description list is a list of terms, with a description of each term.
+            The <dl> tag defines the description list, the <dt> tag defines the term (name), and the <dd> tag describes each term:
+        -->
+
+        <dl>
+            <dt>Data 1</dt>
+                <dd>Description to data</dd>
+            <dt>Data 2</dt>
+                <dd>Description to data </dd>
+        </dl>
+
+        <!--
+            Summary
+            Tag	    Description
+            <ul>	Defines an unordered list
+            <ol>	Defines an ordered list
+            <li>	Defines a list item
+            <dl>	Defines a description list
+            <dt>	Defines a term in a description list
+            <dd>	Describes the term in a description list
+        -->
+
+        <!--
+            Lists can be nested (list inside list):
+            Note: A list item (<li>) can contain a new list, and other HTML elements, like images and links, etc.
+
+
+        -->
+
+        <ul>
+            <li>Data 1</li>
+            <li>Data 2</li>
+            <ul>
+                <li>Description to data part 1</li>
+                <li>Desciption to data part 2</li>
+            </ul>
+        </ul>
+
+    </body>
+</html>

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1642184413 source:c:\users\anatoliko\desktop\a6f8project_thanosversion\a6f8thanos.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"genlib.h"
+	"simpio.h"
+

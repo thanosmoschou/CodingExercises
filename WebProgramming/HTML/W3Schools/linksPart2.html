@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <title>A random title</title>
+        <meta charset="utf-8">
+       
+        <!--
+            Explanation
+            a:link means unvisited link
+            a:visited means a visited link
+            a:hover means that we hover the mouse over the link without click on it
+            a:active means that we activate link(when we click it...if you click on the link without releasing the button
+            you will see the different color we defined with this ruleset)
+        -->
+
+        <style>
+            a:link {
+                color: orange;
+                text-decoration: underline;
+            }
+
+            a:visited {
+                color:red;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: red;
+                background-color: blue;
+                margin: 20px 10px;
+                padding: 5px 10px;
+                text-align: center;
+                display:inline-block;
+            }
+
+            a:active {
+                color: purple;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!--
+            HTML links are hyperlinks.
+            You can click on a link and jump to another document.
+            When you move the mouse over a link, the mouse arrow will turn into a little hand.
+            Note: A link does not have to be text. A link can be an image or any other HTML element!
+        -->
+
+        <a href="https://uom.gr" target="_blank">Visit uom</a>
+       
+        <!--
+            Create a Bookmark in HTML
+            Bookmarks can be useful if a web page is very long.
+            To create a bookmark - first create the bookmark, then add a link to it.
+            When the link is clicked, the page will scroll down or up to the location with the bookmark.
+
+            First, use the id attribute to create a bookmark:
+            <h2 id="C4">Chapter 4</h2>
+
+            Then, add a link to the bookmark ("Jump to Chapter 4"), from within the same page:
+            <a href="#C4">Jump to Chapter 4</a>
+
+            You can also add a link to a bookmark on another page:
+            <a href="html_demo.html#C4">Jump to Chapter 4</a>
+
+            Use the id attribute (id="value") to define bookmarks in a page
+            Use the href attribute (href="#value") to link to the bookmark
+        -->
+
+    </body>
+</html>

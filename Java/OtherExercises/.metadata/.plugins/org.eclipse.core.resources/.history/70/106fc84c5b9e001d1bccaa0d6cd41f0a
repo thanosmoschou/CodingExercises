@@ -1,0 +1,38 @@
+/*
+ * Author: Thanos Moschou
+ * Date: 01/2023
+ * Description: revision exercise in java
+ */
+
+package rev6;
+
+public class Main 
+{
+
+	public static void main(String[] args) 
+	{
+		Ship s1 = new Ship(3);
+		Ship s2 = new Ship(5);
+		
+		Bulk b1 = new Bulk("sdf", "Athens", 400);
+		Bulk b2 = new Bulk("afa", "Thessaloniki", 460);
+		Bulk b3 = new Bulk("gdfs", "Berlin", 300);
+		Bulk b4 = new Bulk("vdsdv", "Nicosia", 790);
+		
+		Refridgerator r1 = new Refridgerator("fsfs", "Germany", 5600);
+		
+		
+		s1.addContainer(b1);
+		s1.addContainer(b2);
+		s1.addContainer(b3);
+		s1.addContainer(b4);
+		
+		s2.addContainer(b4);
+		s2.addContainer(r1);
+		
+		new MyFrame(s1);
+		new MyFrame(s2);
+
+	}
+
+}

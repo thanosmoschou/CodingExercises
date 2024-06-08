@@ -1,0 +1,105 @@
+/*
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+background (shorthand property)
+
+*/
+
+/*The background-color property specifies the background color of an element.*/
+
+/*
+The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)
+Specify that the background image should be fixed
+Specify that the background image should scroll with the rest of the page
+*/
+
+body{
+    /* background-color: rgb(173, 230, 220); */
+    background-image: url("simple-banner-website-background-paperclip.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/*You can set the background color for any HTML elements*/
+
+h1{
+    background-color: rgb(226, 174, 43);
+}
+
+/*The opacity property specifies the opacity/transparency of an element. It can take a value from 0.0 - 1.0. 
+The lower value, the more transparent
+
+Note: When using the opacity property to add transparency to the background of an element, all of 
+its child elements inherit the same transparency. This can make the text inside a fully transparent element hard to read.
+
+You can also use rgba
+
+The background-image property specifies an image to use as the background of an element.
+By default, the image is repeated so it covers the entire element.
+
+Note: When using a background image, use an image that does not disturb the text.
+
+
+div{
+    background-color: rgb(18, 3, 75);
+    opacity: 1;
+    background-image: url("simple-banner-website-background-paperclip.jpg"); 
+}
+
+div > p{
+    color: rgb(0, 0, 0); 
+}
+
+
+By default, the background-image property repeats an image both horizontally and vertically.
+Some images should be repeated only horizontally or vertically, or they will look strange
+
+If the image above is repeated only horizontally (background-repeat: repeat-x;), the background will look better
+Tip: To repeat an image vertically, set background-repeat: repeat-y;
+
+Showing the background image only once is also specified by the background-repeat property
+
+The background-position property is used to specify the position of the background image.
+
+
+
+ul{
+    background-image: url("simple-banner-website-background-paperclip.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+
+Shorthand properties
+
+To shorten the code, it is also possible to specify all the background properties in one single property. This is called a shorthand property.
+
+Instead of writing:
+
+body {
+  background-color: #ffffff;
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+You can use the shorthand property background
+
+body {
+  background: #ffffff url("img_tree.png") no-repeat right top;
+}
+
+When using the shorthand property the order of the property values is:
+
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+
+It does not matter if one of the property values is missing, as long as the other ones are in this order.
+*/

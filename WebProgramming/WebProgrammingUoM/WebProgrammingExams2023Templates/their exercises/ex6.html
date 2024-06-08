@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator</title>
+        <style>
+            #p1{
+                background-color: rgb(209, 206, 206);
+                border: 2px solid black;
+                border-radius: 5px;
+                width: 120px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to calculator</h1>
+
+        <input type="text" name="num1" id="n1">
+        <select name="oper" id="op">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" name="num2" id="n2">
+
+        <p id="p1">Calculate...</p>
+        <p id="p2">Result: </p>
+
+        <script>
+            var par = document.getElementById('p1');
+
+            par.addEventListener('click', function (avt)
+            {
+                var n1 = Number(document.getElementById('n1').value);
+                var n2 = Number(document.getElementById('n2').value);
+                var op = document.getElementById('op').value;
+
+                console.log(typeof n1, typeof n2, typeof op);
+
+                if(Number.isNaN(n1) || Number.isNaN(n2))
+                {
+                    document.getElementById('p2').innerHTML = "Result: NaN";
+                    return;
+                }
+                
+                if(op == '+')
+                {
+                    document.getElementById('p2').innerHTML = "Result: " + (n1 + n2);
+                }
+                else if(op == '-')
+                {
+                    document.getElementById('p2').innerHTML = "Result: " + (n1 - n2);
+                }
+                else if(op == '*')
+                {
+                    document.getElementById('p2').innerHTML = "Result: " + (n1 * n2);
+                }
+                else
+                {
+                    if(n2 != 0)
+                    {
+                        document.getElementById('p2').innerHTML = "Result: " + (n1 / n2);
+                    }
+                    else
+                    {
+                        document.getElementById('p2').innerHTML = "Result: Infinity";
+                    }
+                    
+                }
+            }, false)
+        </script>
+    </body>
+</html>

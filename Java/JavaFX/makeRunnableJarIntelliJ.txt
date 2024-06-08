@@ -1,0 +1,54 @@
+My colleague Andreas Hadjiantonis helped me with the solution
+
+Open intellij -> new project -> java & maven -> next -> create -> create a Launcher.java file that contains:
+public static void main(String[] args)
+{
+        HelloApplication.main(args);
+}
+
+The HelloApplication is for showing purposes. Name the class as you want but make sure it has the following code:
+
+public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+
+Now go to pom.xml -> find an execution tag that contains the mainClass tag. This is the starting point of the app
+<executions>
+                    <execution>
+                        <!-- Default configuration for running with: mvn clean javafx:run -->
+                        <id>default-cli</id>
+                        <configuration>
+                            <mainClass>com.example.demo/com.example.demo.HelloApplication</mainClass>
+                            <launcher>app</launcher>
+                            <jlinkZipName>app</jlinkZipName>
+                            <jlinkImageName>app</jlinkImageName>
+                            <noManPages>true</noManPages>
+                            <stripDebug>true</stripDebug>
+                            <noHeaderFiles>true</noHeaderFiles>
+                        </configuration>
+                    </execution>
+</executions>
+
+Change the
+<mainClass>com.example.demo/com.example.demo.HelloApplication</mainClass>
+with
+<mainClass>com.example.demo/com.example.demo.Launcher</mainClass>
+
+and
+<launcher>app</launcher>
+with
+<launcher>Launcher</launcher> which is the Launcher class
+
+Now go to the top menu -> file -> project structure -> artifacts -> + -> JAR -> From modules with dependencies -> select the Launcher class -> ok -> now in the central part of the screen where you can see some files: press + -> File -> find the javafx sdk folder that you downloaded from the original site -> go to bin folder -> get all the .dll files that folder contains -> ok (press ctrl+s to save the files after you press ok) -> now on the top menu go to build -> build artifacts -> build
+Also check the manifest file and make sure it contains the Launcer class inside.
+Now you can go to the out folder and double click on the jar.
+

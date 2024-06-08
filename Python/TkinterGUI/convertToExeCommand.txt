@@ -1,0 +1,7 @@
+Open a cmd
+Type auto-py-to-exe
+Select some options. The command will be something like the following:
+
+pyinstaller --noconfirm --onefile --windowed --add-data "C:/Users/thano/Desktop/billionaire/assets;assets/" --add-data "C:/Users/thano/Desktop/billionaire/questions.txt;."  "C:/Users/thano/Desktop/billionaire/billionaire.py"
+
+Copy the command and close the program. Paste the command to the cmd

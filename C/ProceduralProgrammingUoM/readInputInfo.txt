@@ -1,0 +1,49 @@
+Read Input from user
+
+When reading string input you can use the following functions:
+
+scanf (and similar to scanf, sscanf, fscanf...)
+gets (actually do not use that is very dangerous)
+fgets
+
+
+scanf
+
+It needs a format string which includes format specifiers. For strings we use %s.
+Scanf reads characters until it reaches a whitespace character(tab, space, \n etc.) but it does not append it to the 
+buffer. It leaves it to the stream. When it finishes, it appends a \0 at the end of the input string.
+
+for example
+
+char name[50];
+scanf("%s", name); -> name is a buffer (we do not use & with arrays because the name of the array is a pointer to its first element)
+
+If user enters: hello my name
+scanf will store only the word hello to the name buffer.
+
+Note: Scanf does not check if the buffer is large enough to store the input and this may cause memory overflows.
+
+SOS: A string always contains the character \0 at the end.
+
+gets
+
+Reads bytes from the standard input stream stdin, and stores them in the array pointed to by buffer. The line consists of all characters up to and including the first newline character (\n) or EOF. The gets() function discards any newline character, and the NULL character (\0) is placed immediately after the last byte read. If there is an error, the value stored in buffer is undefined.
+
+It is super vulnerable because it does not check how many characters it will read. It reads until it finds a \n.
+Use fgets instead
+
+fgets
+
+char name[50];
+fgets(name, "HELLO", 50);
+
+The fgets() function in C reads up to n characters from the stream (file stream or standard input stream) to a string str. The fgets() function keeps on reading characters until:
+
+(n-1) characters have been read from the stream.
+a newline character is encountered.
+end of file (EOF) is reached.
+
+fgets terminates at the newline character but appends it at the end of the string str. The function also appends the terminating null character (\0) at the end of the passed string.
+
+In this example it reads either 49 characters (and it places the \0 as the 50th), or until it reaches a \n or until it reaches an EOF.
+

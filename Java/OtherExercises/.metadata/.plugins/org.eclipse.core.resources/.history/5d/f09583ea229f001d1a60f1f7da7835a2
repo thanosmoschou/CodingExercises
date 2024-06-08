@@ -1,0 +1,17 @@
+
+public class Hotel 
+{
+	private String name;
+	
+	
+	public Hotel(String aName)
+	{
+		this.name = aName;
+	}
+	
+	
+	public String getName()
+	{
+		return name;
+	}
+}

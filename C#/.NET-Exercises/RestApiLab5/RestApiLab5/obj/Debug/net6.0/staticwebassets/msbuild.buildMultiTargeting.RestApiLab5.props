@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\RestApiLab5.props" />
+</Project>

@@ -1,0 +1,126 @@
+/*
+Property	        Description
+margin	            A shorthand property for setting all the margin properties in one declaration
+margin-bottom	    Sets the bottom margin of an element
+margin-left	        Sets the left margin of an element
+margin-right	    Sets the right margin of an element
+margin-top	        Sets the top margin of an element
+
+
+The CSS margin properties are used to create space around elements, outside of any defined borders.
+
+All the margin properties can have the following values:
+
+auto - the browser calculates the margin
+length - specifies a margin in px, pt, cm, etc.
+% - specifies a margin in % of the width of the containing element
+inherit - specifies that the margin should be inherited from the parent element
+Tip: Negative values are allowed.
+
+
+If the margin property has four values
+
+margin: 25px 50px 75px 100px;
+top margin is 25px
+right margin is 50px
+bottom margin is 75px
+left margin is 100px
+
+If the margin property has three values:
+
+margin: 25px 50px 75px;
+top margin is 25px
+right and left margins are 50px
+bottom margin is 75px
+
+If the margin property has two values:
+
+margin: 25px 50px;
+top and bottom margins are 25px
+right and left margins are 50px
+
+If the margin property has one value:
+
+margin: 25px;
+all four margins are 25px
+
+You can set the margin property to auto to horizontally center the element within its container.
+The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.
+
+Note: 
+  margin-left: inherit;
+  This example lets the left margin of an element be inherited from the parent element
+*/
+
+p{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 10px;
+
+    padding: 20px 50px;
+}
+
+/*
+The CSS padding properties are used to generate space around an element's content, inside of any defined borders.
+
+padding-top
+padding-right
+padding-bottom
+padding-left
+All the padding properties can have the following values:
+
+length - specifies a padding in px, pt, cm, etc.
+% - specifies a padding in % of the width of the containing element
+inherit - specifies that the padding should be inherited from the parent element
+
+The padding property is a shorthand property for the following individual padding properties:
+
+padding-top
+padding-right
+padding-bottom
+padding-left
+So, here is how it works:
+
+If the padding property has four values:
+
+padding: 25px 50px 75px 100px;
+top padding is 25px
+right padding is 50px
+bottom padding is 75px
+left padding is 100px
+
+If the padding property has three values:
+
+padding: 25px 50px 75px;
+top padding is 25px
+right and left paddings are 50px
+bottom padding is 75px
+
+If the padding property has two values:
+
+padding: 25px 50px;
+top and bottom paddings are 25px
+right and left paddings are 50px
+
+If the padding property has one value:
+
+padding: 25px;
+all four paddings are 25px
+
+The CSS width property specifies the width of the element's content area. The content area is the portion inside the padding, border, and margin of an element (the box model).
+
+So, if an element has a specified width, the padding added to that element will be added to the total width of the element. This is often an undesirable result.
+
+To keep the width at certain value, no matter the amount of padding, you can use the box-sizing property. This causes the element to maintain its actual width; if you increase the padding, the available content space will decrease.
+
+All CSS Padding Properties
+Property	      Description
+padding	        A shorthand property for setting all the padding properties in one declaration
+padding-bottom	Sets the bottom padding of an element
+padding-left	  Sets the left padding of an element
+padding-right	  Sets the right padding of an element
+padding-top	    Sets the top padding of an element
+
+
+*/

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1639981277 source:c:\users\anatoliko\desktop\a1f7project\a1f7.c
+	<stdio.h>
+	"genlib.h"
+	"simpio.h"
+	<ctype.h>
+	<string.h>
+

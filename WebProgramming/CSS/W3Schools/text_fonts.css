@@ -1,0 +1,154 @@
+/*
+text-align
+text-align-last
+direction
+unicode-bidi
+vertical-align
+
+The text-align property is used to set the horizontal alignment of a text.
+A text can be left or right aligned, centered, or justified.
+
+The text-align-last property specifies how to align the last line of a text.
+
+The direction and unicode-bidi properties can be used to change the text direction of an element
+
+The vertical-align property sets the vertical alignment of an element.
+
+
+
+*/
+
+h1{
+    text-align: right;
+}
+
+p{
+    text-align-last: left;
+    text-decoration-line: underline;
+    text-decoration-color: orangered;
+    text-decoration-style: dotted;
+    line-height: 50px;
+    /*text-decoration-thickness: 10px;*/
+}
+
+h2{
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-transform: capitalize;
+}
+
+img{
+    vertical-align: top;
+    width: 10px;
+    height: 10px;
+}
+
+/*
+text-decoration-line
+text-decoration-color
+text-decoration-style
+text-decoration-thickness
+text-decoration
+
+The text-decoration-line property is used to add a decoration line to text.
+Tip: You can combine more than one value, like overline and underline to display lines both over and under a text.
+Note: It is not recommended to underline text that is not a link, as this often confuses the reader.
+
+The text-decoration-color property is used to set the color of the decoration line.
+
+The text-decoration-style property is used to set the style of the decoration line.
+
+The text-decoration-thickness property is used to set the thickness of the decoration line.
+
+The text-decoration property is a shorthand property for:
+
+text-decoration-line (required)
+text-decoration-color (optional)
+text-decoration-style (optional)
+text-decoration-thickness (optional)
+
+
+All links in HTML are underlined by default. Sometimes you see that links are styled with no underline. The text-decoration: none; is used to remove the underline from links, like this:
+
+Example
+a {
+  text-decoration: none;
+}
+
+
+The text-transform property is used to specify uppercase and lowercase letters in a text.
+It can be used to turn everything into uppercase or lowercase letters, or capitalize the first letter of each word
+*/
+
+/*
+text-indent
+letter-spacing
+line-height
+word-spacing
+white-space
+
+The text-indent property is used to specify the indentation of the first line of a text
+
+The letter-spacing property is used to specify the space between the characters in a text.
+
+The line-height property is used to specify the space between lines
+
+The word-spacing property is used to specify the space between the words in a text.
+
+The white-space property specifies how white-space inside an element is handled.
+
+The text-shadow property adds shadow to text.
+
+In its simplest use, you only specify the horizontal shadow (2px) and the vertical shadow (2px)
+Next, add a color (red) to the shadow:
+Then, add a blur effect (5px) to the shadow
+
+--------------------------------------------------------
+
+All CSS Font Properties
+Property	    Description
+font	        Sets all the font properties in one declaration
+font-family	    Specifies the font family for text
+font-size	    Specifies the font size of text
+font-style	    Specifies the font style for text
+font-variant	Specifies whether or not a text should be displayed in a small-caps font
+font-weight	    Specifies the weight of a font
+
+The font property is a shorthand property for:
+
+font-style
+font-variant
+font-weight
+font-size/line-height
+font-family
+Note: The font-size and font-family values are required. If one of the other values is missing, their default value are used.
+
+Tip: The font-family property should hold several font names as a "fallback" system, to ensure maximum compatibility 
+between browsers/operating systems. Start with the font you want, and end with a generic family (to let the browser pick a 
+similar font in the generic family, if no other fonts are available). The font names should be separated with comma.
+
+The font-style property is mostly used to specify italic text.
+
+This property has three values:
+
+normal - The text is shown normally
+italic - The text is shown in italics
+oblique - The text is "leaning" (oblique is very similar to italic, but less supported)
+
+The font-weight property specifies the weight of a font(normal, bold etc)
+
+The font-variant property specifies whether or not a text should be displayed in a small-caps font.
+In a small-caps font, all lowercase letters are converted to uppercase letters. However, 
+the converted uppercase letters appears in a smaller font size than the original uppercase letters in the text.
+
+
+
+*/
+
+li{
+    text-indent: 30px;
+    /*letter-spacing: 5px;*/
+    white-space: break-spaces;
+    text-shadow: 3px 4px 5px red;
+}
+

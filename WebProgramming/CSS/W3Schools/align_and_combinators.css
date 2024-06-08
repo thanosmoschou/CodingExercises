@@ -1,0 +1,101 @@
+/*
+To horizontally center a block element (like <div>), use margin: auto;
+
+Setting the width of the element will prevent it from stretching out to the edges of its container.
+
+The element will then take up the specified width, and the remaining space will be split equally between the two margins
+
+Note: Center aligning has no effect if the width property is not set (or set to 100%).
+
+To just center the text inside an element, use text-align: center;
+
+To center an image, set left and right margin to auto and make it into a block element:
+
+One method for aligning elements is to use position: absolute;:
+
+Note: Absolute positioned elements are removed from the normal flow, and can overlap elements.
+
+Another method for aligning elements is to use the float property:
+
+There are many ways to center an element vertically in CSS. A simple solution is to use top and bottom padding:
+
+To center both vertically and horizontally, use padding and text-align: center:
+
+Another trick is to use the line-height property with a value that is equal to the height property:
+
+
+
+*/
+
+div.a{
+    margin: auto;
+    width: 50%;
+    border: 2px solid black;
+    text-align: center;
+    
+}
+
+
+table{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    
+
+}
+
+/*
+A combinator is something that explains the relationship between the selectors.
+
+There are four different combinators in CSS:
+
+descendant selector (space)
+child selector (>)
+adjacent sibling selector (+)
+general sibling selector (~)
+
+The descendant selector matches all elements that are descendants of a specified element.
+
+The following example selects all <p> elements inside <div> elements: 
+
+div p {
+  background-color: yellow;
+}
+
+The child selector selects all elements that are the children of a specified element.
+
+The following example selects all <p> elements that are children of a <div> element:
+
+div > p{
+    background-color: yellow;
+}
+
+The adjacent sibling selector is used to select an element that is directly after another specific element.
+
+Sibling elements must have the same parent element, and "adjacent" means "immediately following".
+
+The following example selects the first <p> element that are placed immediately after <div> elements:
+
+div + p{
+    some properties
+}
+
+The general sibling selector selects all elements that are next siblings of a specified element.
+
+The following example selects all <p> elements that are next siblings of <div> elements: 
+
+div ~ p {
+    something
+
+}
+
+
+All CSS Combinator Selectors
+Selector	            Example	        Example description
+element element	        div p	        Selects all <p> elements inside <div> elements
+element>element	        div > p	        Selects all <p> elements where the parent is a <div> element
+element+element	        div + p	        Selects the first <p> element that are placed immediately after <div> elements
+element1~element2	    p ~ ul	        Selects every <ul> element that are preceded by a <p> element
+
+*/
+

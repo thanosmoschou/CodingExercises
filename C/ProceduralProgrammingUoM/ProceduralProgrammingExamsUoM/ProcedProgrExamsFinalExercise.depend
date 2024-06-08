@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1645026686 source:c:\users\anatoliko\desktop\procedprogrexamsfinalexercise\heating.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"simpio.h"
+	"genlib.h"
+

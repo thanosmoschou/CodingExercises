@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1636139494 source:c:\users\anatoliko\desktop\a24f3project\a24f3.c
+	<stdio.h>
+	"genlib.h"
+	"simpio.h"
+
+1636136610 source:c:\users\anatoliko\desktop\a24f3project\a24f3a.c
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1636824380 source:c:\users\anatoliko\desktop\a4f4project\a4f4.c
+	<stdio.h>
+	"genlib.h"
+	"simpio.h"
+	<math.h>
+

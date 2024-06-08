@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "5FNzlNmGTbTBzjjpQOzEi1ETukYyjVEee/n47VzmOTBulS3V5mh2y4r6ARZRm47zr4gS2sN+4N6CH6V8xKF8NQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\thano\\Desktop\\Exams2023September2ndTeam\\Exams2023September2ndTeam\\Exams2023September2ndTeam.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\thano\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\thano\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\thano\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\thano\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\thano\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\thano\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

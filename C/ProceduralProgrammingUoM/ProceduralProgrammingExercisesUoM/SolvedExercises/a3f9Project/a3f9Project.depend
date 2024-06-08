@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1642526909 source:c:\users\anatoliko\desktop\a3f9project\a3f9.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	<stdlib.h>
+

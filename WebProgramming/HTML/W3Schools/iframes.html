@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-GR">
+    <head>
+        <meta charset="utf-8">
+        <title>A random title</title>
+        <style>
+            .decor {
+                background-color: aqua;
+                color: black;
+                border: 2px solid black;
+                font-size: 20px;
+                font-family: Arial;
+                text-align: center;
+            }
+        </style>
+    </head>
+    
+    <body>
+       <!--
+            An HTML iframe is used to display a web page within a web page.
+            The HTML <iframe> tag specifies an inline frame.
+
+            An inline frame is used to embed another document within the current HTML document.
+            <iframe src="url" title="description"></iframe>
+            
+            Tip: It is a good practice to always include a title attribute for the <iframe>. 
+            This is used by screen readers to read out what the content of the iframe is.
+
+            Use the height and width attributes to specify the size of the iframe.
+
+            The height and width are specified in pixels by default
+            Or you can add the style attribute and use the CSS height and width properties
+            
+            An iframe can be used as the target frame for a link.
+
+            The target attribute of the link must refer to the name attribute of the iframe
+
+
+       -->
+
+       <div class="decor">
+            <h2>Let's see a page into another page!</h2>
+       </div>
+
+       <iframe src="https://lagadas.net" title="Lagadas Net" name="iframe_a" style="width:1500px;height:600px;border:none;"></iframe>
+       <a href="https://uom.gr" target="iframe_a">Visit uom</a>
+
+       <p style="background-color: yellowgreen; height: 100px;">This is how you can see a page into another page</p>
+
+    </body>
+
+
+</html>

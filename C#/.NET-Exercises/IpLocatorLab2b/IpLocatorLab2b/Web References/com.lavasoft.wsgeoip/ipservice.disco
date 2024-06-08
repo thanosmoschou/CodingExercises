@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://wsgeoip.lavasoft.com/ipservice.asmx?wsdl" docRef="http://wsgeoip.lavasoft.com/ipservice.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://wsgeoip.lavasoft.com/ipservice.asmx" xmlns:q1="http://lavasoft.com/" binding="q1:GeoIPServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://wsgeoip.lavasoft.com/ipservice.asmx" xmlns:q2="http://lavasoft.com/" binding="q2:GeoIPServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

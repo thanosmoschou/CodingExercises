@@ -1,0 +1,159 @@
+/*
+The list-style-type property specifies the type of list item marker.
+The list-style-image property specifies an image as the list item marker
+The list-style-position property specifies the position of the list-item markers (bullet points).
+
+list-style-position: outside;" means that the bullet points will be outside the list item. The start of 
+each line of a list item will be aligned vertically
+
+list-style-position: inside; means that the bullet points will be inside the list item. 
+As it is part of the list item, it will be part of the text and push the text at the start
+
+Remove Default Settings
+The list-style-type:none property can also be used to remove the markers/bullets. 
+Note that the list also has default margin and padding. To remove this, add margin:0 and padding:0 to <ul> or <ol>
+
+The list-style property is a shorthand property. It is used to set all the list properties in one declaration
+
+When using the shorthand property, the order of the property values are:
+
+list-style-type (if a list-style-image is specified, the value of this property will be displayed if the image for some reason cannot be displayed)
+list-style-position (specifies whether the list-item markers should appear inside or outside the content flow)
+list-style-image (specifies an image as the list item marker)
+If one of the property values above is missing, the default value for the missing property will be inserted, if any.
+
+Styling List With Colors
+We can also style lists with colors, to make them look a little more interesting.
+
+Anything added to the <ol> or <ul> tag, affects the entire list, while properties added to the <li> tag will affect the individual list items
+
+*/
+
+ul{
+    list-style-type: lower-latin;
+    list-style-position: inside;
+    background-color: aquamarine;
+}
+
+ol{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+li{
+    background-color: brown;
+}
+
+/*
+To specify table borders in CSS, use the border property.
+
+Full-Width Table
+The table above might seem small in some cases. If you need a table that should span the entire screen 
+(full-width), add width: 100% to the <table> element
+
+Double Borders
+Notice that the table in the examples bellow have double borders. 
+This is because both the table and the <th> and <td> elements have separate borders.
+
+The border-collapse property sets whether the table borders should be collapsed into a single border
+
+If you only want a border around the table, only specify the border property for <table>:
+
+The width and height of a table are defined by the width and height properties.
+
+The example below sets the width of the table to 100%, and the height of the <th> elements to 70px:
+
+The text-align property sets the horizontal alignment (like left, right, or center) of the content in <th> or <td>.
+By default, the content of <th> elements are center-aligned and the content of <td> elements are left-aligned.
+
+The vertical-align property sets the vertical alignment (like top, bottom, or middle) of the content in <th> or <td>.
+
+To control the space between the border and the content in a table, use the padding property on <td> and <th> elements:
+
+Add the border-bottom property to <th> and <td> for horizontal dividers
+
+Use the :hover selector on <tr> to highlight table rows on mouse over
+
+For zebra-striped tables, use the nth-child() selector and add a background-color to all even (or odd) table rows:
+
+A responsive table will display a horizontal scroll bar if the screen is too small to display the full content
+Add a container element (like <div>) with overflow-x:auto around the <table> element to make it responsive
+
+CSS Table Properties
+Property	    Description
+border	        Sets all the border properties in one declaration
+border-collapse	Specifies whether or not table borders should be collapsed
+border-spacing	Specifies the distance between the borders of adjacent cells
+caption-side	Specifies the placement of a table caption
+empty-cells	    Specifies whether or not to display borders and background on empty cells in a table
+table-layout	Sets the layout algorithm to be used for a table
+
+*/
+
+/*
+thead, tbody{
+    border: 1px solid black;
+}
+*/
+
+table{
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 2000px;
+}
+
+th, td{
+    /* border: 2px solid black; */
+    /* width: 70%; */
+    text-align: center;
+    vertical-align: baseline;
+    padding: 5px;
+    border-bottom: 3px solid blue;
+}
+
+tr:hover{
+    background-color: cyan;
+}
+
+tr:nth-child(even){
+    background-color: darkmagenta;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*
+The display property specifies if/how an element is displayed.
+
+Every HTML element has a default display value depending on what type of element it is. 
+The default display value for most elements is block or inline.
+
+A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).
+
+An inline element does not start on a new line and only takes up as much width as necessary.
+
+display: none; is commonly used with JavaScript to hide and show elements without deleting and recreating them.
+
+Override The Default Display Value
+
+Changing an inline element to a block element, or vice versa, can be useful for making the page look a specific way, and still follow the web standards.
+
+A common example is making inline <li> elements for horizontal menus
+
+Note: Setting the display property of an element only changes how the element is displayed, NOT what kind of element it is. 
+So, an inline element with display: block; is not allowed to have other block elements inside it.
+
+Hiding an element can be done by setting the display property to none. The element will be hidden, and the page will be displayed as if the element is not there
+visibility:hidden; also hides an element.
+
+However, the element will still take up the same space as before. The element will be hidden, but still affect the layout
+
+CSS Display/Visibility Properties
+Property	Description
+display	    Specifies how an element should be displayed
+visibility	Specifies whether or not an element should be visible
+*/
+
+li{
+    display: inline;
+}

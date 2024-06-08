@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1640088298 source:c:\users\anatoliko\desktop\a2f7project\a2f7.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+

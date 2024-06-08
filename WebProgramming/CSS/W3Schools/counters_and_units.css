@@ -1,0 +1,89 @@
+/*
+CSS counters are "variables" maintained by CSS whose values can be incremented by CSS rules 
+(to track how many times they are used). Counters let you adjust the appearance of content based on its placement in the document.
+
+Automatic Numbering With Counters
+
+To work with CSS counters we will use the following properties:
+
+counter-reset - Creates or resets a counter
+counter-increment - Increments a counter value
+content - Inserts generated content
+counter() or counters() function - Adds the value of a counter to an element
+To use a CSS counter, it must first be created with counter-reset.
+
+The following example creates a counter for the page (in the body selector), 
+then increments the counter value for each <h2> element and adds "Section <value of the counter>:" to the beginning of each <h2> element
+
+
+CSS Counter Properties
+Property	        Description
+content     	    Used with the ::before and ::after pseudo-elements, to insert generated content
+counter-increment	Increments one or more counter values
+counter-reset	    Creates or resets one or more counters
+counter()	        Returns the current value of the named counter
+
+*/
+
+body{
+    counter-reset: section;
+}
+
+h2::before{
+    counter-increment: section;
+    content: "Section " counter(section) ": ";
+}
+
+
+/*
+CSS Units
+CSS has several different units for expressing a length.
+
+Many CSS properties take "length" values, such as width, margin, padding, font-size, etc.
+
+Length is a number followed by a length unit, such as 10px, 2em, etc.
+
+h1 {
+  font-size: 60px;
+}
+
+p {
+  font-size: 25px;
+  line-height: 50px;
+}
+
+Note: A whitespace cannot appear between the number and the unit. However, if the value is 0, the unit can be omitted.
+
+For some CSS properties, negative lengths are allowed.
+
+There are two types of length units: absolute and relative.
+
+The absolute length units are fixed and a length expressed in any of these will appear as exactly that size.
+
+Absolute length units are not recommended for use on screen, because screen sizes vary so much. However, they can be used if the output medium is known, such as for print layout.
+
+
+Unit	Description
+cm	    centimeters
+mm	    millimeters
+in	    inches (1in = 96px = 2.54cm)
+px *	pixels (1px = 1/96th of 1in)
+pt	    points (1pt = 1/72 of 1in)
+pc	    picas (1pc = 12 pt)
+
+* Pixels (px) are relative to the viewing device. For low-dpi devices, 1px is one device pixel (dot) of the display. For printers and high resolution screens 1px implies multiple device pixels.
+
+Relative length units specify a length relative to another length property. Relative length units scale better between different rendering mediums.
+
+Unit	Description	
+em	    Relative to the font-size of the element (2em means 2 times the size of the current font)	
+ex	    Relative to the x-height of the current font (rarely used)	
+ch	    Relative to width of the "0" (zero)	
+rem	    Relative to font-size of the root element	
+vw	    Relative to 1% of the width of the viewport*	
+vh	    Relative to 1% of the height of the viewport*	
+vmin	Relative to 1% of viewport's* smaller dimension	
+vmax	Relative to 1% of viewport's* larger dimension	
+%	    Relative to the parent element
+
+*/
