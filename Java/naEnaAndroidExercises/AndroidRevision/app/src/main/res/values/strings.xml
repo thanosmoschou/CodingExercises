@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AndroidRevision</string>
+    <string name="welcomeMsgTxt">A simple project to demonstrate some things I\'ve learned</string>
+    <string name="nextBtnTxt">Next</string>
+    <string name="part1Msg">In this part you will see how to read from strings.xml both string elements and string arrays. You will also learn how to create radio buttons and spinners</string>
+    <string name="backBtnTxt">Back</string>
+
+
+    <string name="thanos">Thanos</string>
+    <string name="eleni">Eleni</string>
+    <string name="something">%s</string>
+
+    <string-array name="foodsArray">
+        <item>Spaghetti</item>
+        <item>Pizza</item>
+        <item>Burger</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

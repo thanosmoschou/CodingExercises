@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<people>
+    <person>
+        <firstName>Thanos</firstName>
+        <lastName>Moschou</lastName>
+    </person>
+
+    <person>
+        <firstName>John</firstName>
+        <lastName>Georgiou</lastName>
+    </person>
+
+    <person>
+        <firstName>Alex</firstName>
+        <lastName>Athanasiou</lastName>
+    </person>
+
+</people>
