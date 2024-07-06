@@ -199,6 +199,26 @@ public class OkHttpHandler
                     ]
                 }
             }
+
+            What if you wanted to traverse the whole json object by taking all keys and from keys getting all values?
+            
+            JSONObject ob = new JSONObject(resp.body().string());
+            Iterator<String> it = ob.keys();
+
+            while(it.hasNext())
+            {
+                String key = it.next();
+                JSONObject b = ob.getJSONObject(key); //this could be anything...json array, string, int etc...
+            }
+
+            How to traverse json array:
+            JSONArray arr = new JSONArray(resp.body().string());
+
+            for(int i = 0; i < arr.length(); i++)
+            {
+                JSONObject o = arr.getJSONObject(i);
+                ...
+            }
              */
 
             String latitude = jsonObject.getString("latitude");

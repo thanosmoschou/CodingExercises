@@ -106,9 +106,9 @@ public class XmlParsing extends AppCompatActivity {
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(fileStream);
 
-        NodeList list = document.getElementsByTagName("person"); //get all <person> elements
+        NodeList list = document.getElementsByTagName("person"); //With getElementsByTagName you get all <person> elements to a NodeList
 
-        for(int i = 0; i < list.getLength(); i++)
+        for(int i = 0; i < list.getLength(); i++) //traverse the nodelist and get the elements that are inside each <person> element
         {
             Node node = list.item(i); //get the current <person> node
             if(node.getNodeType() == Node.ELEMENT_NODE)
@@ -116,6 +116,9 @@ public class XmlParsing extends AppCompatActivity {
                 Element element = (Element) node;
 
                 //extract data from inside this node (don't suppose it's a root element)
+                //Inside my <person> element I could have a lot of <firstName> elements...So with getElementsByTagName("firstName") I get a list of those nodes
+                //that are inside my <person> element. I have only 1 so with index 0 I can get it. I could also use .getChildNodes().item(0).getNodeValue() 
+                //instead of .getTextContext()
                 String firstNameString = element.getElementsByTagName("firstName").item(0).getTextContent();
                 String lastNameString = element.getElementsByTagName("lastName").item(0).getTextContent();
 
