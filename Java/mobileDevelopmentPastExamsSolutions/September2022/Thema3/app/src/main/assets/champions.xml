@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<champions>
+    <champion>
+        <name>Chelsea</name>
+        <year>2016-2017</year>
+        <url>https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png</url>
+    </champion>
+    <champion>
+        <name>Manchester City</name>
+        <year>2017-2018</year>
+        <url>https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/285px-Manchester_City_FC_badge.svg.png</url>
+    </champion>
+</champions>
