@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<surgeries>
+    <doctor>
+        <specialization>Cardiology</specialization>
+        <success>0, 1, 1, 0</success>
+    </doctor>
+    <doctor>
+        <specialization>Hepatology</specialization>
+        <success>1, 1, 0, 1</success>
+    </doctor>
+    <doctor>
+        <specialization>Orthopaedics</specialization>
+        <success>0, 1, 0, 0</success>
+    </doctor>
+    <doctor>
+        <specialization>Ophthalmology</specialization>
+        <success>0, 0, 1, 0</success>
+    </doctor>
+    <doctor>
+        <specialization>Nephrology</specialization>
+        <success>1, 1, 1, 1</success>
+    </doctor>
+</surgeries>
