@@ -1,0 +1,60 @@
+for (int y = 0; y < img.getHeight(); y++) {
+			for (int x = 0; x < img.getWidth(); x++) {
+				//Retrieving contents of a pixel
+				int pixel = img.getRGB(x,y);
+				//Creating a Color object from pixel value
+				Color color = new Color(pixel, true);
+				//Retrieving the R G B values, 8 bits per r,g,b
+				//Calculating GrayScale
+				int red = (int) (color.getRed() * redCoefficient);
+				int green = (int) (color.getGreen() * greenCoefficient);
+				int blue = (int) (color.getBlue() * blueCoefficient);
+				//Creating new Color object
+				color = new Color(red+green+blue,
+				                  red+green+blue,
+				                  red+green+blue);
+				//Setting new Color object to the image
+				img.setRGB(x, y, color.getRGB());
+			}
+		}
+
+O parapano kodikas kanei aneksartitous ipoligismous...opote mias kai exo
+tropopoiisi mporo na spaso se grammes to heigth kai na to doso se nimata...
+kathe nima gia olo to width ths grammis na kanei ipoligismo...
+
+Pali exo n*m an n = height kai m = width... (akolouthiaki ektelesi)
+Se parallili tha exo (n*m)/P opou P o arithmos ton threads mou...prepei na metriso kai tin anagogi
+i anagogi einai P kathos exo P nimata ara sinolika n*m/P + P
+Epeidi kathe nima tha grafei se diaforetika pixels den thelo locks...kanonika prepei na elegkseis
+an prepei na valeis locks...poli simantiko auto
+
+Main:
+    Read input for filename to read and filename to write...
+    Create Buffered object named img and get width and heigth of the image...
+    Create red, blue and green coefficients...
+
+    for (int i = 0; i < totalThreads; i++)
+        create/start thread(i, width, height, totalThreads, img, redCoeff, blueCoeff, greenCoef)
+
+    for(int i = 0; i < totalThreads; i++)
+        join thread(i)
+
+    write img to a new file...
+
+Thread:
+    id = i
+    int block = height / totalThreads
+    width = width
+    redC = redCoeff
+    blueC = blueCoeff
+    greenC = greenCoeff
+    imgBuff = img //moirazomeno ara oti kai na allaksei epireazei kai tous allous...
+    start = id * block
+    stop = start + block
+    if (id == totalThreads - 1)
+        stop = height
+
+    run():
+        for (int i = start; i < stop; i++)
+            for (int j = 0; j < width; j++)
+                //calculation...
