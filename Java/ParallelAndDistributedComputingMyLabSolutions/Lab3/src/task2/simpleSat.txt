@@ -1,0 +1,101 @@
+Mporei na parallilistei to check_circuit...Paratiroume ton parakato kodika:
+
+for (int i = 0; i < iterations; i++)
+    check_circuit (i, size);
+
+kai:
+
+static void check_circuit (int z, int size) {
+
+        // z: the combination number
+        // v: the combination number in binar format
+
+		boolean[] v = new boolean[size];
+
+		for (int i = size-1; i >= 0; i--)
+			v[i] = (z & (1 << i)) != 0;
+
+        // Check the ouptut of the circuit for input v
+        boolean value =
+           (  v[0]  ||  v[1]  )
+        && ( !v[1]  || !v[3]  )
+        && (  v[2]  ||  v[3]  )
+        && ( !v[3]  || !v[4]  )
+        && (  v[4]  || !v[5]  )
+        && (  v[5]  || !v[6]  )
+        && (  v[5]  ||  v[6]  )
+        && (  v[6]  || !v[15] )
+        && (  v[7]  || !v[8]  )
+        && ( !v[7]  || !v[13] )
+        && (  v[8]  ||  v[9]  )
+        && (  v[8]  || !v[9]  )
+        && ( !v[9]  || !v[10] )
+        && (  v[9]  ||  v[11] )
+        && (  v[10] ||  v[11] )
+        && (  v[12] ||  v[13] )
+        && (  v[13] || !v[14] )
+        && (  v[14] ||  v[15] )
+        && (  v[14] ||  v[16] )
+        && (  v[17] ||  v[1]  )
+        && (  v[18] || !v[0]  )
+        && (  v[19] ||  v[1]  )
+        && (  v[19] || !v[18] )
+        && ( !v[19] || !v[9]  )
+        && (  v[0]  ||  v[17] )
+        && ( !v[1]  ||  v[20] )
+        && ( !v[21] ||  v[20] )
+        && ( !v[22] ||  v[20] )
+        && ( !v[21] || !v[20] )
+        && (  v[22] || !v[20] );
+
+        // If output == 1 print v and z
+        if (value) {
+			printResult(v, size, z);
+		}
+    }
+
+H for loop:
+for (int i = 0; i < iterations; i++)
+    check_circuit (i, size);
+
+paratiroume oti kanei aneksartitous ipologismous (ton elegxo tou value kathor i for pou exei mesa einai initialization)
+opote mporoun oi ipologismoi na ektelestoun parallila...
+
+Main:
+for(i in range 0 to totalThreads)
+    create/start Thread(i, circuitInput, iterations, totalThreads)
+
+for(i in range 0 to totalThreads)
+    join Thread(i)
+
+Thread:
+    id = i
+    block = iterations / threads
+    start = id * block
+    stop = start + block
+    if (id == threads - 1) stop = iterations
+    circInput = circuitInput
+
+
+    run():
+        for (i = start; i < stop; i++)
+            check_circuit(i)
+
+    check_circuit(i):
+        initialization of v...
+
+        boolean value = ...
+        if (value) printValue(v, z)
+
+    printValue(boolean[] v, int z):
+        //opos einai...
+
+
+
+Akolouthiaki ektelesi:
+Trexei 2^28 epanalipseis. Ara sinolika vimata 2^28
+
+Parallili ektelesh:
+An ypotheso oti exo P threads tote i ektelesi tha ginei (2^28)/P...An eixa kai anagogi tote tha eprepe na ipologiso kai ton
+xrono ekeino...episis prepei na elegkseis an thelei locks, alla edo ta nimata den grafoun kapou koinoxrista opote eimai ok...
+
