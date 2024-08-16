@@ -25,7 +25,8 @@ I know that it is inefficient but it offers better parallelization...let's see
 
 The reduce process is taking extra time making our program slower than sequential...Let's try and apply only an
 allocation procedure...So as a result I will pass some arrays from main to my threads...the shared object for some
-reason didn't work properly here...
+reason didn't work properly here...not enough heap space...so as a result apply only allocations without reduce for
+this lab...
 
 Without the copy of local array the program has almost the same speed as the sequential...let's see with the cyclic allocation
 in task2_2
