@@ -28,8 +28,7 @@ public class CyclicBarrierWithConditionVariablesAndLocks extends MyBarrier
     @Override
     public void barrier()
     {
-        try
-        {
+        try {
             arrivedLock.lock();
             arrived++;
             if (arrived == totalThreads)
@@ -57,7 +56,6 @@ public class CyclicBarrierWithConditionVariablesAndLocks extends MyBarrier
 
             leavingCondition.signalAll();
             arrivedLock.unlock();
-        }
-        catch (InterruptedException e) {}
+        } catch (InterruptedException e) {}
     }
 }

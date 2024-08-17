@@ -29,7 +29,9 @@ public class BruteForceStringMatchSequential
         }
         */
 
-        String filename = "fourtimes.txt"; //root folder is the intellij's project folder...
+        //String filename = "E.coli";
+        String filename = "sixteentimes.txt";
+        //String filename = "fourtimes.txt"; //root folder is the intellij's project folder...
         //String patternInput = "cagccggggttcccgctggcgcaattga";
 
         //String fileString = new String(Files.readAllBytes(Paths.get(args[0])));//, StandardCharsets.UTF_8);
@@ -56,9 +58,9 @@ public class BruteForceStringMatchSequential
         //oppte an px vrethei ena match ston xaraktira 10 (kai paei mexri ton 20 afou to pattern einai 10) tote tha pame stin thesi 10
         //tou match kai tha valoume tin timi 1 oste na ksero se poio simeio tou keimenou ksekinaei to pattern...
         int matchLength = n - m;
-        char[] match = new char[matchLength+1];
+        int[] match = new int[matchLength+1]; //the original was char[] but I changed it...int type seems better to me for the parallelized version...
         for (int i = 0; i <= matchLength; i++)
-            match[i] = '0';
+            match[i] = 0;
 
         //The code above contains some initializations, so I skip it from the time calculation process...
 
@@ -72,7 +74,7 @@ public class BruteForceStringMatchSequential
             for (i = 0; i < m && pattern[i] == text[i + j]; i++); //Null statement...but it works for us...
             if (i >= m)
             {
-                match[j] = '1'; //vlepeis kai stin eksoteriki for oti paei mexri matchLength...
+                match[j] = 1; //vlepeis kai stin eksoteriki for oti paei mexri matchLength...
                 matchCount++;
             }
         }
@@ -81,7 +83,7 @@ public class BruteForceStringMatchSequential
         long endTime = System.currentTimeMillis() - startTime;
 
         for (int i = 0; i < matchLength; i++)
-            if (match[i] == '1')
+            if (match[i] == 1)
                 System.out.print(i+" ");
 
         System.out.println();

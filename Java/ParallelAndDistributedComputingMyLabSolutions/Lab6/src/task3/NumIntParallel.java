@@ -128,11 +128,9 @@ public class NumIntParallel
         MyThread thread = new MyThread(0, numSteps, limit, shared, step);
         thread.start();
 
-        try
-        {
+        try {
             thread.join();
-        }
-        catch (InterruptedException e) {e.printStackTrace();}
+        } catch (InterruptedException e) {e.printStackTrace();}
 
         /* end timing and print result */
         long endTime = System.currentTimeMillis();

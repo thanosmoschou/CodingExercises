@@ -25,8 +25,7 @@ public class CyclicBarrierWithSemaphores extends MyBarrier
     @Override
     public void barrier()
     {
-        try
-        {
+        try {
             //an to nima den einai to teleutaio aplos tha parei to semaphore tou mutex
             //tha auksisei tin timi tou arrived kai meta tha kanei mutex release kai tha paei
             //kato sto acquire tou waiting opou kai tha kollisei...
@@ -51,9 +50,7 @@ public class CyclicBarrierWithSemaphores extends MyBarrier
             mutex.release();
             leaving.acquire();
             leaving.release();
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }

@@ -28,8 +28,7 @@ public class MainArguments {
             try {
 				counterThreads[i].join();
 				sum = sum + counterThreads[i].n;
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
 		}
 		
 		System.out.println("sum = "+ sum);

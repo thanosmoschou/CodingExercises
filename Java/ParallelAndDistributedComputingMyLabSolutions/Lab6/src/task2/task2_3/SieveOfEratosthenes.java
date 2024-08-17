@@ -10,7 +10,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /*
 Tha kanoume dinamiki katanomi...
-Paromoia taxitita me to sequential gia mikra noumera...gia na valo megalitera noumera na do ti ginetai...
+Paromoia taxitita me to sequential gia mikra noumera (an den kaneis pali anagogi sosta...ego
+omos thelo na eimai sostos kai telika ekana apeikonisi topika kai anagogi sto telos)...gia na valo megalitera noumera na do ti ginetai...
 
 int totalTasks = 1000000000;
 
@@ -27,16 +28,12 @@ time in ms = 8619
 
 gia na kleidono kathe thesi ksexorista na do...den mporo otan exo poli megala noumera...den ftanei to heap...
 
+Telika kano anagogi sto telos eno prin exo kanei topika tin apeikonisi mou...
+
  */
 
 class SieveOfEratosthenes
 {
-	/*static int totalThreads;
-	static boolean[] prime;
-	static int totalTasks;
-	static int tasksAssigned = -1;
-	static Lock myLock = new ReentrantLock();*/
-
 	public static void main(String[] args)
 	{
 		/*
@@ -58,33 +55,27 @@ class SieveOfEratosthenes
 		}
 		*/
 
-		int totalTasks = 1000000000;
+		int totalTasks = 300000;
 		int limit = (int) Math.sqrt(totalTasks) + 1;
 		Buffer buffer = new Buffer(totalTasks, limit);
-		//boolean[] primes = buffer.getBuffer();
 
 		// get current time
 		long startTime = System.currentTimeMillis();
 
-		int totalThreads = 10;
+		int totalThreads = 3;
 		Thread[] threads = new Thread[totalThreads];
 
 		for (int i = 0; i < totalThreads; i++)
 		{
-			//threads[i] = new MyThread(i, limit, totalThreads, shared, size);
-			//threads[i] = new Thread(new Worker(i, limit, totalThreads, prime, size));
-			//threads[i] = new Thread(new Worker(i, buffer, totalTasks, limit, primes));
-			threads[i] = new Thread(new Worker(i, buffer, totalTasks, limit));
+			threads[i] = new Thread(new Worker(i, buffer, limit, totalTasks));
 			threads[i].start();
 		}
 
 		for (int i = 0; i < totalThreads; i++)
 		{
-			try
-			{
+			try {
 				threads[i].join();
-			}
-			catch (InterruptedException e) {}
+			} catch (InterruptedException e) {}
 		}
 
 		// get current time and calculate elapsed time
@@ -92,7 +83,6 @@ class SieveOfEratosthenes
 
 		int count = buffer.getPrimes();
 
-		//System.out.println("number of primes " + shared.findPrimes());
 		System.out.println("number of primes " + count);
 		System.out.println("time in ms = "+ elapsedTimeMillis);
 	}

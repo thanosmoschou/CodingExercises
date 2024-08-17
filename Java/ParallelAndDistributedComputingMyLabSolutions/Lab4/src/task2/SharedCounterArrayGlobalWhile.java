@@ -27,11 +27,9 @@ public class SharedCounterArrayGlobalWhile
 	
 		for (int i = 0; i < numThreads; i++)
 		{
-			try
-			{
+			try {
 				threads[i].join();
-			}
-			catch (InterruptedException e) {}
+			} catch (InterruptedException e) {}
 		}
 
         shared.check_array();
@@ -63,15 +61,12 @@ public class SharedCounterArrayGlobalWhile
 				//another thread will modify the values...when the other thread will wake up, it
 				//will not get the new values and it will compare the old ones...
 				lock.lock();
-				try
-				{
+				try {
 					if (counter >= end)
 						break;
 					array[counter]++;
 					counter++;
-				}
-				finally
-				{
+				} finally {
 					lock.unlock();
 				}
 			}

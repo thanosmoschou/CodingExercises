@@ -20,39 +20,30 @@ public class Shared
 
     public void addLocalSum(double localSum)
     {
-        try
-        {
+        try {
             lock.lock();
             this.sum += localSum;
-        }
-        finally
-        {
+        } finally {
             lock.unlock();
         }
     }
 
     public void calculatePi()
     {
-        try
-        {
+        try {
             lock.lock();
             pi = sum * step;
-        }
-        finally
-        {
+        } finally {
             lock.unlock();
         }
     }
 
     public double getPi()
     {
-        try
-        {
+        try {
             lock.lock();
             return this.pi;
-        }
-        finally
-        {
+        } finally {
             lock.unlock();
         }
     }

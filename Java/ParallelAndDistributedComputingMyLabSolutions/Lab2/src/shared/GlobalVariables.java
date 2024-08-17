@@ -31,8 +31,7 @@ public class GlobalVariables {
             try {
 				counterThreads[i].join();
 				n = n + counterThreads[i].threadN;
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
 		} 
         for (int i = 0; i < numThreads; i++) //to idio gia to i kai edo
 			System.out.println("a["+i+"] = "+a[i]);

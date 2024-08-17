@@ -22,11 +22,9 @@ public class DoubleCounterSync
 
         for (int i = 0; i < totalThreads; i++)
         {
-            try
-            {
+            try {
                 threads[i].join();
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
         }
 
         System.out.println("Counter 1: " + counter.getFirstCounter() + " Counter 2: " + counter.getSecondCounter());

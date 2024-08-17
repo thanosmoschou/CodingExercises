@@ -43,11 +43,9 @@ public class Buffer
         while (counter == size)
         {
             System.out.println("The buffer is full...");
-            try
-            {
+            try {
                 wait();
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
         }
 
         //Add item
@@ -69,11 +67,9 @@ public class Buffer
         while (counter == 0)
         {
             System.out.println("The buffer is empty...");
-            try
-            {
+            try {
                 wait();
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
 
         }
 

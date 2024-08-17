@@ -2,23 +2,30 @@ package task1;
 
 public class Shared
 {
-    private char[] match;
+    private int[] match; //the original type was char[] but int[] seems better to me for the parallelized version...
     private int matchCtr;
     private Object lockObject;
     private int matchLength;
 
     public Shared(int matchLength)
     {
-        match = new char[matchLength + 1];
+        match = new int[matchLength + 1];
         this.matchLength = matchLength;
         this.lockObject = new Object();
         matchCtr = 0;
 
+        //o pinakas match deixnei se poion xaraktira tou keimenou mou ksekinaei to pattern...gia auto vlepeis exei mikos n-m
+        //px an exo keimeno 100 xaraktiron kai to pattern einai 10 xaraktires, tote tha pao na sigkrino mexri tin thesi 90 (n-m)
+        //oste saronontas olo to pattern, an vro match auto na ginei isa isa mexri tin thesi 100 dhl thn teleutaia thesi...
+        //an pigaina mexri telos px mexri tin 100 kai ksekinousa na sigkrino xaraktires me to pattern mou, tha evgaina out of bounds...
+        //oppte an px vrethei ena match ston xaraktira 10 (kai paei mexri ton 20 afou to pattern einai 10) tote tha pame stin thesi 10
+        //tou match kai tha valoume tin timi 1 oste na ksero se poio simeio tou keimenou ksekinaei to pattern...
+
         for (int i = 0; i < matchLength; i++)
-            match[i] = '0';
+            match[i] = 0;
     }
 
-    /*
+
     public void addLocalMatchCtr(int localMatchCtr)
     {
         synchronized (lockObject)
@@ -27,39 +34,21 @@ public class Shared
         }
     }
 
-    //kathe nima grafei se ksexoristes theseis ara kalo einai na pernao kai to range oste na min svinontai
-    //proigoumenes times...lathos ilopoiisi min tin dineis simasia...
-    public void addLocalMatchArr(char[] localMatchArr, int from, int to)
-    {
-        for (int i = from; i < to; i++)
-        {
-            match[i] = localMatchArr[i];
-        }
-    }
-    */
-
-    //oute auto vouleuei kala...
-    public void addLocalMatchArrAndIncreaseMatchCtr(int index)
+    public void addLocalMatchArr(int[] localMatchArr)
     {
         synchronized (lockObject)
         {
-            matchCtr++;
-            match[index] = '1';
+            for (int i = 0; i < matchLength; i++)
+            {
+                match[i] += localMatchArr[i];
+            }
         }
     }
-
-    /*public void increaseMatchCtr()
-    {
-        synchronized (lockObject)
-        {
-            matchCtr++;
-        }
-    }*/
 
     public void printMatches()
     {
         for (int i = 0; i < matchLength; i++)
-            if (match[i] == '1')
+            if (match[i] == 1)
                 System.out.print(i+" ");
     }
 

@@ -23,11 +23,9 @@ public class SharedCounterArrayGlobal
 
 		for (int i = 0; i < numThreads; i++)
 		{
-			try
-			{
+			try {
 				threads[i].join();
-			}
-			catch (InterruptedException e) {}
+			} catch (InterruptedException e) {}
 		}
 
 		shared.check_array();

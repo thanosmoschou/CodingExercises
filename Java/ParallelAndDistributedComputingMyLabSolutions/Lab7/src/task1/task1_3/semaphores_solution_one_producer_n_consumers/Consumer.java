@@ -19,12 +19,9 @@ public class Consumer extends Thread
             item = buff.get();
             //System.out.println("Consumed value: " + item);
 
-            try
-            {
+            try {
                 sleep((long) (Math.random() * 100)); //delay for demonstration purposes...
-            }
-            catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }

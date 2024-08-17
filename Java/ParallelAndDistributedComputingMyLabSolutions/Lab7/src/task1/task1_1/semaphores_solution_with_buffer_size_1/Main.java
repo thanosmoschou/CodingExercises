@@ -37,7 +37,8 @@ public class Main
         //Buffer buffer = new Buffer(bufferSize);
         Buffer buffer = new Buffer();
 
-        for (int i = 0; i < nOfProducers; i++) {
+        for (int i = 0; i < nOfProducers; i++)
+        {
             producers[i] = new Producer(buffer, totalItems);
             producers[i].start();
         }

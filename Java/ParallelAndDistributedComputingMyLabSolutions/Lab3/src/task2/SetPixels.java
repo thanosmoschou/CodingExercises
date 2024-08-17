@@ -23,14 +23,11 @@ public class SetPixels
         BufferedImage img = null;
         int width = 0, height = 0;
 
-        try
-        {
+        try {
             img = ImageIO.read(new File(fileNameR));
             width = img.getWidth();
             height = img.getHeight();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -53,24 +50,20 @@ public class SetPixels
 
         for (int i = 0; i < totalThreads; i++)
         {
-            try
-            {
+            try {
                 threads[i].join();
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
         }
 
         //Stop timing
         long elapsedTimeMillis = System.currentTimeMillis()-start;
 
         //Saving the modified image to Output file
-        try
-        {
+        try {
             File file = new File(fileNameW);
             if (img != null)
                 ImageIO.write(img, "jpg", file);
-        }
-        catch (IOException e) {}
+        } catch (IOException e) {}
 
         System.out.println("Done...");
         System.out.println("time in ms = "+ elapsedTimeMillis);

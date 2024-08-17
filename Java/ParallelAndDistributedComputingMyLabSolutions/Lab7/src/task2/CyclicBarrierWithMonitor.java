@@ -35,11 +35,9 @@ public class CyclicBarrierWithMonitor extends MyBarrier
 
         while (!allWaiting)
         {
-            try
-            {
+            try {
                 wait(); //edo paratane to kleidoma kai kapoio allo nima to pairnei...
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
         }
 
         notifyAll();
@@ -56,11 +54,9 @@ public class CyclicBarrierWithMonitor extends MyBarrier
 
         while (!allLeaving)
         {
-            try
-            {
+            try {
                 wait();
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
         }
 
         notifyAll();

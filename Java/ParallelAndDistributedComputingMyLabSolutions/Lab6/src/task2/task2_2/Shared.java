@@ -17,8 +17,7 @@ public class Shared
     public synchronized void addResult(boolean[] local)
     {
         for (int i = 2; i <= size; i++)
-            if (!local[i])
-                prime[i] = local[i];
+            prime[i] = prime[i] && local[i];
     }
 
     public int findPrimes()

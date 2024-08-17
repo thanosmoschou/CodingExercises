@@ -26,13 +26,10 @@ public class MyThread extends Thread
             th1.start();
             th2.start();
 
-            try
-            {
+            try {
                 th1.join();
                 th2.join();
-            }
-            catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }

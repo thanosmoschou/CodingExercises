@@ -33,13 +33,10 @@ public class Task1
         th1.start();
         th2.start();
 
-        try
-        {
+        try {
             th1.join(); //main thread waits for th1 to finish in order to continue...
             th2.join(); //if you do not put join then the main thread does not wait for the other threads to finish and it may finish before them...
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
