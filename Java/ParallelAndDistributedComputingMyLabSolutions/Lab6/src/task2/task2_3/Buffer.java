@@ -5,11 +5,11 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Buffer
 {
+    private Object primeLockObj;
     private boolean[] prime;
     private int totalTasks;
+    private Object tasksAssignedLockObj;
     private int tasksAssigned;
-    //private Lock[] locks;
-    private Lock myLock;
     private int limit;
 
     public Buffer(int totalTasks, int limit)
@@ -20,92 +20,29 @@ public class Buffer
         for (int i = 2; i <= totalTasks; i++)
             prime[i] = true;
 
-        this.myLock = new ReentrantLock();
-
-        /*locks = new ReentrantLock[totalTasks + 1];
-        for (int i = 2; i <= totalTasks; i++)
-            locks[i] = new ReentrantLock();*/
-
         this.limit = limit;
+        this.primeLockObj = new Object();
+        this.tasksAssignedLockObj = new Object();
 
     }
 
-    public boolean isPrime(int index)
+    public void addLocalResult(boolean[] local)
     {
-
-        //return prime[index];
-
-        try
+        synchronized (primeLockObj)
         {
-            myLock.lock();
-            return prime[index];
+            for (int i = 2; i <= totalTasks; i++)
+                prime[i] = prime[i] && local[i];
         }
-        finally
-        {
-            myLock.unlock();
-        }
-
-        /*try
-        {
-            locks[index].lock();
-            return prime[index];
-        }
-        finally
-        {
-            locks[index].unlock();
-        }*/
-    }
-
-    public void deleteMultiplesOf(int index)
-    {
-        //I do not know if I need locks here...i am not sure if threads are reading and writing
-        //from a place simultaneously...in general i need locks...
-
-        for (int i = index * index; i <= totalTasks; i += index)
-            prime[i] = false;
-
-        /*for (int i = index * index; i <= totalTasks; i += index)
-        {
-            try
-            {
-                locks[i].lock();
-                prime[i] = false;
-            }
-            finally
-            {
-                locks[i].unlock();
-            }
-        }*/
-
-        /*for (int i = index * index; i <= totalTasks; i += index)
-            prime[i] = false;*/
-
-        /*try
-        {
-            //sequential reduce...
-            myLock.lock();
-            for (int i = index * index; i <= totalTasks; i += index)
-                prime[i] = false;
-        }
-        finally
-        {
-            myLock.unlock();
-        }*/
     }
 
     public int getTask()
     {
-        try
+        synchronized (tasksAssignedLockObj)
         {
-            myLock.lock();
             if (++tasksAssigned < limit)
                 return tasksAssigned;
             else
                 return -1;
-        }
-        finally
-        {
-            myLock.unlock();
         }
     }
 

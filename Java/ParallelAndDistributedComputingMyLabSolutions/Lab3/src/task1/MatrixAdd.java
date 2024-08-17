@@ -46,11 +46,9 @@ public class MatrixAdd
 
         for (int i = 0; i < totalThreads; i++)
         {
-            try
-            {
+            try {
                 threads[i].join();
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
         }
 
         long totalTime = System.currentTimeMillis() - startTime;

@@ -20,8 +20,7 @@ public class Lab4 {
             try {
 				counterThreads[i].join();
 				n += counterThreads[i].threadN;
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
 		} 
 		System.out.println("Main n = "+n); 
     }

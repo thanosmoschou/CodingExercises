@@ -35,8 +35,7 @@ public class Buffer
 
     public void put(int item)
     {
-        try
-        {
+        try {
             //P(itemsToPut) & P(bufferMutex)
             itemsToPut.acquire();
             buffMutex.acquire();
@@ -51,13 +50,9 @@ public class Buffer
 
             if (counter == size)
                 System.out.println("The buffer is full...");
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
-        }
-        finally
-        {
+        } finally {
             //V(bufferMutex) & V(itemsToGet)
             buffMutex.release();
             itemsToGet.release();
@@ -68,8 +63,7 @@ public class Buffer
     {
         int item;
 
-        try
-        {
+        try {
             //P(itemsToGet) & P(buffMutex)
             itemsToGet.acquire();
             buffMutex.acquire();
@@ -83,13 +77,9 @@ public class Buffer
 
             if (counter == 0)
                 System.out.println("The buffer is empty...");
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
-        }
-        finally
-        {
+        } finally {
             //V(buffMutex) & V(itemsToPut)
             buffMutex.release();
             itemsToPut.release();

@@ -65,12 +65,10 @@ public class MyThread extends Thread
              * nimata...
              */
 
-            try
-            {
+            try {
                 left.join();
                 right.join();
-            }
-            catch (InterruptedException e) {e.printStackTrace();}
+            } catch (InterruptedException e) {e.printStackTrace();}
         }
     }
 }

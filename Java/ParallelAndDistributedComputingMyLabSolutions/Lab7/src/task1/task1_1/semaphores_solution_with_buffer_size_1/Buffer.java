@@ -42,8 +42,7 @@ public class Buffer
 
     public void put(int item)
     {
-        try
-        {
+        try {
             itemsToPut.acquire();
 
             //Add item
@@ -55,13 +54,9 @@ public class Buffer
 
             if (counter == 1)
                 System.out.println("The buffer is full...");
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
-        }
-        finally
-        {
+        } finally {
             itemsToGet.release();
         }
     }
@@ -70,8 +65,7 @@ public class Buffer
     {
         int item;
 
-        try
-        {
+        try {
             itemsToGet.acquire();
 
             item = value;
@@ -82,13 +76,9 @@ public class Buffer
 
             if (counter == 0)
                 System.out.println("The buffer is empty...");
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
-        }
-        finally
-        {
+        } finally {
             itemsToPut.release();
         }
 

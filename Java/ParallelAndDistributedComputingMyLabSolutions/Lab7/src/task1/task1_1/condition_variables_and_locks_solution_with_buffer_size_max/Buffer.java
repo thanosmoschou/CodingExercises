@@ -53,8 +53,7 @@ public class Buffer
         unlock
          */
 
-        try
-        {
+        try {
             buffLock.lock();
 
             //Add item
@@ -67,9 +66,7 @@ public class Buffer
 
             if (counter == 1) //an exei ena item na diavaseis ksipna autous pou eixan koimithei logo empty buffer...
                 bufferEmptyCondition.signalAll();
-        }
-        finally
-        {
+        } finally {
             buffLock.unlock();
         }
     }
@@ -78,18 +75,15 @@ public class Buffer
     {
         int item;
 
-        try
-        {
+        try {
             buffLock.lock();
 
             while (counter == 0)
             {
                 System.out.println("The buffer is empty...");
-                try
-                {
+                try {
                     bufferEmptyCondition.await();
-                }
-                catch (InterruptedException e) {}
+                } catch (InterruptedException e) {}
 
             }
 
@@ -102,9 +96,7 @@ public class Buffer
 
             if (counter == size - 1) //an exei xoro na grapseis ksipna autous pou eixan koimithei logo full buffer...
                 bufferFullCondition.signalAll();
-        }
-        finally
-        {
+        } finally {
             buffLock.unlock();
         }
 

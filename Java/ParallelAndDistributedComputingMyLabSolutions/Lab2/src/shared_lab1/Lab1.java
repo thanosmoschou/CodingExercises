@@ -28,8 +28,7 @@ public class Lab1 {
             try {
 				counterThreads[i].join();
 				n = n + counterThreads[i].threadN;
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
 		} 
         for (int i = 0; i < numThreads; i++) //topiki tis main...den moirazetai
 			System.out.println("a["+i+"] = "+a[i]);

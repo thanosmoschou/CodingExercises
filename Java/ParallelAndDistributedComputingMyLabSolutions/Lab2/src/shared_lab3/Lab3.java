@@ -21,8 +21,7 @@ public class Lab3 {
             try {
 				counterThreads[i].join();
 				count.n = count.n + counterThreads[i].threadN;
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
 		} 
         for (int i = 0; i < numThreads; i++) //to idio kai gia auto to i
 			System.out.println("a["+i+"] = "+count.a[i]);

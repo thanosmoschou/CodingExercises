@@ -12,12 +12,9 @@ public class Task4
         MyThread th1 = new MyThread();
         th1.start();
 
-        try
-        {
+        try {
             th1.join(); //main thread waits for th1 to finish in order to continue...
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 

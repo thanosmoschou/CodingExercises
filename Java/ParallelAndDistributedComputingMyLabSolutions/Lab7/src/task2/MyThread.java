@@ -18,11 +18,10 @@ public class MyThread extends Thread
         {
             System.out.println("Thread"+ myId+ " started");
             myBarrier.barrier();
-            try
-            {
+            try {
                 sleep((int)(Math.random()*1000));
-            }
-            catch (InterruptedException e) {}
+            } catch (InterruptedException e) {}
+
             System.out.println("Thread"+ myId+ " reached barrier");
             myBarrier.barrier();
             System.out.println("Thread"+ myId+ " passed barrier");

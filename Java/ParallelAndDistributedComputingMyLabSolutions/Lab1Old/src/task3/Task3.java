@@ -185,13 +185,10 @@ public class Task3
 
         for (int i = 0; i < size; i++)
         {
-            try
-            {
+            try {
                 th1Arr[i].join();
                 th2Arr[i].join();
-            }
-            catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
