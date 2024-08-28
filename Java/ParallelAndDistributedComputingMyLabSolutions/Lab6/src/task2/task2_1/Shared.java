@@ -3,6 +3,7 @@ package task2.task2_1;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+//Ignore it for now...
 public class Shared
 {
     private boolean[] prime;

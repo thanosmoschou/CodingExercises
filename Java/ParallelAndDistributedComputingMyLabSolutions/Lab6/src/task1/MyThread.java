@@ -8,11 +8,12 @@ public class MyThread extends Thread
     private int patternLength;
     private char[] pattern; //erxetai os orisma anaforas ara einai moirazomenos sta nimata...to idio kai o text...ostoso mono diavazo apo autous ara den thelo locks...
     private char[] text;
-    private int[] localMatch;
     private int localMatchCtr;
     private Shared shared;
+    private boolean[] match;
 
-    public MyThread(int i, int totalThreads, int matchSearchLength, int patternLength, char[] patternArr, char[] textArr, Shared sh)
+
+    public MyThread(int i, int totalThreads, int matchSearchLength, int patternLength, char[] patternArr, char[] textArr, boolean[] match, Shared sh)
     {
         this.myId = i;
         this.totalThreads = totalThreads;
@@ -20,11 +21,8 @@ public class MyThread extends Thread
         this.patternLength = patternLength;
         this.pattern = patternArr;
         this.text = textArr;
+        this.match = match;
         this.shared = sh;
-
-        this.localMatch = new int[matchSearchLength + 1];
-        for (int k = 0; k < matchSearchLength; k++)
-            localMatch[k] = 0;
     }
 
     @Override
@@ -39,7 +37,7 @@ public class MyThread extends Thread
             //tis eksoterikis for kai paei mexri i+patternLength (sto keimeno mou)
             if (j >= patternLength)
             {
-                localMatch[i] = 1;
+                match[i] = true;
                 localMatchCtr++;
             }
         }
@@ -56,6 +54,6 @@ public class MyThread extends Thread
          */
 
         shared.addLocalMatchCtr(localMatchCtr);
-        shared.addLocalMatchArr(localMatch);
+        //shared.addLocalMatchArr(localMatch);
     }
 }

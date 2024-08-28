@@ -4,11 +4,11 @@ public class Worker implements Runnable
 {
     private int myId;
     private Buffer buffer;
-    private int limit;
-    private int totalThreads;
-    private boolean[] localPrimes;
+    //private boolean[] localPrimes;
+    private boolean[] primes;
     private int size;
 
+    /*
     public Worker(int i, Buffer buff, int limit, int size)
     {
         myId = i;
@@ -20,6 +20,15 @@ public class Worker implements Runnable
         for (int k = 2; i <= size; i++)
             localPrimes[i] = true;
     }
+    */
+
+    public Worker(int i, Buffer buff, int size, boolean[] pr)
+    {
+        myId = i;
+        this.buffer = buff;
+        this.size = size;
+        primes = pr;
+    }
 
     @Override
     public void run()
@@ -30,15 +39,15 @@ public class Worker implements Runnable
             calculateTask(element);
         }
 
-        buffer.addLocalResult(localPrimes);
+        //buffer.addLocalResult(localPrimes);
     }
 
     private void calculateTask(int index)
     {
-        if (localPrimes[index])
+        if (primes[index])
         {
             for (int i = index * index; i <= size; i += index)
-                localPrimes[i] = false;
+                primes[i] = false;
         }
     }
 

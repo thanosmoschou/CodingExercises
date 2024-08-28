@@ -2,15 +2,11 @@ package task1;
 
 public class Shared
 {
-    private int[] match; //the original type was char[] but int[] seems better to me for the parallelized version...
     private int matchCtr;
     private Object lockObject;
-    private int matchLength;
 
     public Shared(int matchLength)
     {
-        match = new int[matchLength + 1];
-        this.matchLength = matchLength;
         this.lockObject = new Object();
         matchCtr = 0;
 
@@ -21,8 +17,8 @@ public class Shared
         //oppte an px vrethei ena match ston xaraktira 10 (kai paei mexri ton 20 afou to pattern einai 10) tote tha pame stin thesi 10
         //tou match kai tha valoume tin timi 1 oste na ksero se poio simeio tou keimenou ksekinaei to pattern...
 
-        for (int i = 0; i < matchLength; i++)
-            match[i] = 0;
+        //for (int i = 0; i < matchLength; i++)
+        //    match[i] = 0;
     }
 
 
@@ -34,6 +30,7 @@ public class Shared
         }
     }
 
+    /*
     public void addLocalMatchArr(int[] localMatchArr)
     {
         synchronized (lockObject)
@@ -51,6 +48,7 @@ public class Shared
             if (match[i] == 1)
                 System.out.print(i+" ");
     }
+    */
 
     public int getMatchCtr()
     {

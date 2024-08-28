@@ -1,5 +1,6 @@
 package task2.task2_2;
 
+//Ignore it for now...
 public class Shared
 {
     private boolean[] prime;
