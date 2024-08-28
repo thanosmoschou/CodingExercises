@@ -17,14 +17,14 @@ Now let's parallelize the code and see the results...for some reason is slower t
 I tried static variables, I tried main arguments that are passed by reference to each thread, I tried a shared object...
 I do not know what is wrong...
 
-Thanos from future: The reduce it taking too long because you copy the whole array...
-
 isos me alli katanomi na itan pio grigoro...tha to dokimaso...
 me kikliki einai ligo pio grigoro apo tin statiki alla pali pio argo apo tin akolouthiaki ektelesi...
 
-i kikliki gia megala noumera einai grigoroteri apo to akolouthiako programma...ekana to E.coli 16 fores megalitero...ostoso etsi einai xoris reduce...
-An valeis reduce ginetai pio argo kathos antigrafeis mia topiki domi se ena shared object...
+Thanos from future: The reduce it taking too long because you copy the whole array...
 
+i kikliki gia megala noumera einai grigoroteri apo to akolouthiako programma...ekana to E.coli 16 fores megalitero...
+ostoso etsi einai xoris reduce me ton tropo pou mathame mexri tora alla kateutheian anagogi ston moirazomeno xoris locks....
+An valeis reduce ginetai pio argo kathos antigrafeis mia topiki domi se ena shared object...
 
 Total matches 16
 Total execution time: 236ms
@@ -32,9 +32,23 @@ Total execution time: 236ms
 Total matches 16
 Total execution time: 80ms
 
-Me reduce:
+Me reduce me lock ston moirazomeno pinaka:
 Total matches 16
 Total execution time: 2326ms
+
+Me reduce xoris lock ston moirazomeno alla me lock mono gia ton metriti kai kikliki katanomi:
+Total matches 16
+Total execution time: 127ms
+
+Thanos from future (28/8/2024):
+ΣΤΟ STRING MATCH ΜΕ ΣΤΑΤΙΚΗ ΚΑΤΑΝΟΜΉ ΕΧΕΙΣ ΕΝΑΝ ΠΊΝΑΚΑ MATCHES ΠΟΥ ΔΕΊΧΝΕΙ ΣΕ ΠΟΙΑ ΘΕΣΗ ΤΟΥ ΚΕΙΜΈΝΟΥ
+ΞΕΚΙΝΑΕΙ Η ΑΝΤΙΣΤΟΙΧΊΑ. ΕΠΙΣΗΣ ΕΧΕΙΣ ΕΝΑΝ ΜΕΤΡΗΤΉ ΠΟΥ ΔΕΊΧΝΕΙ ΠΟΣΕΣ ΑΝΤΙΣΤΟΙΧΊΕΣ ΕΧΕΙ ΤΕΛΙΚΑ ... ΚΑΙ ΕΔΩ ΙΣΩΣ
+ΘΕΣ ΚΛΕΙΔΩΜΑ ΜΟΝΟ ΣΤΟΝ ΜΕΤΡΗΤΉ ΚΑΘΏΣ ΚΑΘΕ ΝΗΜΑ ΘΑ ΓΡΑΦΕΙ ΣΕ ΞΕΧΩΡΙΣΤΉ ΘΈΣΗ ΤΟΥ ΠΊΝΑΚΑ...
+ΤΟ ΙΔΙΟ ΙΣΧΥΕΙ ΚΑΙ ΓΙΑ ΤΙΣ ΑΛΛΕΣ ΚΑΤΑΝΟΜΈΣ...ΓΕΝΙΚΑ ΕΔΩ ΕΙΝΑΙ ΠΕΡΊΠΤΩΣΗ...
+
+ΝΑ ΘΥΜΑΣΑΙ ΤΗΝ ΓΕΝΙΚΉ ΔΟΜΗ ΠΟΥ ΜΑΘΑΜΕ ΔΗΛ ΤΟΠΙΚΌΤΗΤΑ ΣΤΟΝ ΥΠΟΛΟΓΙΣΜΌ ΚΑΙ ΑΝΑΓΩΓΉ ΣΤΟ ΤΈΛΟΣ...ΕΔΩ ΗΤΑΝ ΣΥΓΚΕΚΡΙΜΕΝΟ
+ΠΑΡΑΔΕΙΓΜΑ ΚΑΙ ΔΕΝ ΧΡΕΙΑΖΟΤΑΝ...ΚΑΛΟ ΘΑ ΕΙΝΑΙ ΝΑ ΚΑΤΑΛΑΒΑΙΝΕΙΣ ΠΟΤΕ ΧΡΕΙΑΖΕΤΑΙ ΚΑΙ ΠΟΤΕ ΟΧΙ ΚΑΘΩΣ ΕΠΙΣΗΣ ΚΑΙ ΝΑ ΘΥΜΑΣΑΙ
+ΤΑ ΓΕΝΙΚΑ ΠΡΟΤΥΠΑ ΟΠΩΣ ΛΕΩ ΠΑΝΩ...
  */
 
 public class BruteForceStringMatchParallelized
@@ -59,6 +73,10 @@ public class BruteForceStringMatchParallelized
             pattern[i] = patternString.charAt(i);
 
         int matchLength = textLength - patternLength;
+        boolean[] match = new boolean[matchLength];
+        for (int i = 0; i < matchLength; i++)
+            match[i] = false;
+
         Shared shared = new Shared(matchLength);
 
         long start = System.currentTimeMillis();
@@ -68,7 +86,8 @@ public class BruteForceStringMatchParallelized
 
         for (int i = 0; i < totalThreads; i++)
         {
-            threads[i] = new MyThread(i, totalThreads, matchLength, patternLength, pattern, text, shared);
+            //threads[i] = new MyThread(i, totalThreads, matchLength, patternLength, pattern, text, shared);
+            threads[i] = new MyThread(i, totalThreads, matchLength, patternLength, pattern, text, match, shared);
             threads[i].start();
         }
 
@@ -81,7 +100,11 @@ public class BruteForceStringMatchParallelized
 
         long end = System.currentTimeMillis() - start;
 
-        shared.printMatches();
+        //shared.printMatches();
+
+        for (int i = 0; i < matchLength; i++)
+            if (match[i])
+                System.out.print(i+" ");
 
         System.out.println();
         System.out.println("Total matches " + shared.getMatchCtr());

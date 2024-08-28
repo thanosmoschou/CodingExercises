@@ -8,10 +8,11 @@ package task2.task2_1;
 //In this algorithm, static map allocation is not the ideal choice because the calculations do not have
 //the same weight...
 
-//Slower than sequential
-
 /*
+
 java SieveOfEratosthenes 1000000
+
+Sequential
 number of primes 78498
 time in ms = 9
 
@@ -20,7 +21,8 @@ number of primes 78498
 time in ms = 41
 
 The reduce process is taking extra time making our program slower than sequential...Let's try and apply only an
-allocation procedure...So as a result I will pass some arrays from main to my threads...the shared object for some
+allocation procedure (h anagogi tha ginei kateutheian ston moirazomeno pinaka xoris topikothta kai antigrafi opos
+mathame)...So as a result I will pass some arrays from main to my threads...the shared object for some
 reason didn't work properly here...not enough heap space...so as a result apply only allocations without reduce for
 this lab...
 
@@ -36,13 +38,31 @@ int result of limit/totalThreads is 0 (because the float result was less than 1 
 leaved only the int part of the result which is 0)
 so the start = id * block stays the same (id * 0)...
 But with small number of threads it works just fine...
+
+Thanos from future:
+ΣΤΟ ΚΌΣΚΙΝΟ ΤΟΥ ΕΡΑΤΟΣΘΈΝΗ ΙΣΩΣ ΘΕΣ ΑΜΟΙΒΑΊΟ ΑΠΟΚΛΕΙΣΜΌ ΑΛΛΑ ΙΣΩΣ ΚΑΙ ΌΧΙ...
+ΓΙΑ ΝΑ ΔΟΥΜΕ: ΔΕ ΣΕ ΕΓΓΥΑΤΑΙ ΚΑΝΕΝΑΣ ΌΤΙ 2 ΝΗΜΑΤΑ ΔΕ ΘΑ ΓΡΆΨΟΥΝ ΣΕ ΙΔΙΑ ΘΕΣΗ .. ΠΧ ΓΙΑ ΤΟ 2 4 6
+ΜΠΟΡΕΙ ΝΑ ΞΕΚΙΝΗΣΕΙ ΈΝΑ ΝΗΜΑ ΝΑ ΚΆΝΕΙ ΔΟΥΛΕΙΆ ΚΑΙ ΈΝΑ ΑΛΛΟ ΝΑ ΚΆΝΕΙ ΓΙΑ 3 6 9 ΚΑΙ ΝΑ ΕΙΝΑΙ ΠΙΟ ΓΡΉΓΟΡΟ
+ΑΡΑ ΘΑ ΠΈΣΟΥΝ ΣΤΗΝ ΙΔΙΑ ΘΈΣΗ (6)...ΝΑΙ ΜΕΝ ΘΑ ΤΟ ΚΆΝΟΥΝ ΚΑΙ ΟΙ 2 FALSE AT THE END OF THE DAY ΑΛΛΑ ΟΚ...
+ΔΕΝ ΕΧΩ ΠΡΌΣΘΕΣΗ ΠΧ ΠΟΥ ΔΕ ΘΑ ΗΞΕΡΑ ΠΟΙΑ ΘΑ ΉΤΑΝ Η ΠΑΛΙΆ ΤΙΜΗ ΚΑΙ ΘΑ ΕΊΧΑ ΕΣΦΑΛΜΕΝΑ ΑΠΟΤΈΛΕΣΜΑΤΑ...
+ΟΠΟΤΕ ΤΕΛΙΚΑ ΙΣΩΣ ΚΑΙ ΝΑ ΜΗΝ ΘΈΛΕΙ Ο ΠΊΝΑΚΑΣ ΚΛΕΙΔΩΜΑ...
+
+ΝΑ ΘΥΜΑΣΑΙ ΤΗΝ ΓΕΝΙΚΉ ΔΟΜΗ ΠΟΥ ΜΑΘΑΜΕ ΔΗΛ ΤΟΠΙΚΌΤΗΤΑ ΣΤΟΝ ΥΠΟΛΟΓΙΣΜΌ ΚΑΙ ΑΝΑΓΩΓΉ ΣΤΟ ΤΈΛΟΣ...ΕΔΩ ΗΤΑΝ ΣΥΓΚΕΚΡΙΜΕΝΟ
+ΠΑΡΑΔΕΙΓΜΑ ΚΑΙ ΔΕΝ ΧΡΕΙΑΖΟΤΑΝ...ΚΑΛΟ ΘΑ ΕΙΝΑΙ ΝΑ ΚΑΤΑΛΑΒΑΙΝΕΙΣ ΠΟΤΕ ΧΡΕΙΑΖΕΤΑΙ ΚΑΙ ΠΟΤΕ ΟΧΙ ΚΑΘΩΣ ΕΠΙΣΗΣ ΚΑΙ ΝΑ ΘΥΜΑΣΑΙ
+ΤΑ ΓΕΝΙΚΑ ΠΡΟΤΥΠΑ ΟΠΩΣ ΛΕΩ ΠΑΝΩ...
+
+Thanos from future (28/8/2024):
+Me statiki xoris reduce opos mathame alla kateutheian ston moirazomeno pinaka:
+3 threads and 1000000 steps
+number of primes 78498
+time in ms = 6
  */
 
 class SieveOfEratosthenes
 {
 	public static void main(String[] args)
 	{
-		int size = 9000000;
+		int size = 1000000;
 
 		/*
 		if (args.length != 1) {
@@ -63,7 +83,11 @@ class SieveOfEratosthenes
 		}
 		*/
 
-		Shared shared = new Shared(size);
+		boolean[] prime = new boolean[size + 1];
+		for (int i = 2; i <= size; i++)
+			prime[i] = true;
+
+		//Shared shared = new Shared(size);
 
 		// get current time 
 		long startTime = System.currentTimeMillis();
@@ -74,7 +98,7 @@ class SieveOfEratosthenes
 		int limit = (int) Math.sqrt(size) + 1;
 		for (int i = 0; i < totalThreads; i++)
 		{
-			threads[i] = new MyThread(i, limit, totalThreads, shared, size);
+			threads[i] = new MyThread(i, limit, totalThreads, size, prime);
 			threads[i].start();
 		}
 
@@ -88,7 +112,16 @@ class SieveOfEratosthenes
 		// get current time and calculate elapsed time
 		long elapsedTimeMillis = System.currentTimeMillis()-startTime;
 
-		System.out.println("number of primes " + shared.findPrimes());
+		int count = 0;
+		for(int i = 2; i <= size; i++)
+			if (prime[i])
+			{
+				count++;
+				//System.out.println(i);
+			}
+		System.out.println("number of primes " + count);
+
+		//System.out.println("number of primes " + shared.findPrimes());
 		System.out.println("time in ms = "+ elapsedTimeMillis);
 	}
 

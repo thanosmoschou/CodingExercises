@@ -5,27 +5,28 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Buffer
 {
-    private Object primeLockObj;
-    private boolean[] prime;
-    private int totalTasks;
+    //private Object primeLockObj;
+    //private boolean[] prime;
+    //private int totalTasks;
     private Object tasksAssignedLockObj;
     private int tasksAssigned;
     private int limit;
 
-    public Buffer(int totalTasks, int limit)
+    public Buffer(int limit)
     {
-        this.totalTasks = totalTasks;
+        //this.totalTasks = totalTasks;
         this.tasksAssigned = 1; //thelo na paei sto 2 gia auto ksekinao apo to 1
-        prime = new boolean[totalTasks + 1];
-        for (int i = 2; i <= totalTasks; i++)
-            prime[i] = true;
+        //prime = new boolean[totalTasks + 1];
+        //for (int i = 2; i <= totalTasks; i++)
+        //    prime[i] = true;
 
         this.limit = limit;
-        this.primeLockObj = new Object();
+        //this.primeLockObj = new Object();
         this.tasksAssignedLockObj = new Object();
 
     }
 
+    /*
     public void addLocalResult(boolean[] local)
     {
         synchronized (primeLockObj)
@@ -34,6 +35,7 @@ public class Buffer
                 prime[i] = prime[i] && local[i];
         }
     }
+    */
 
     public int getTask()
     {
@@ -46,6 +48,7 @@ public class Buffer
         }
     }
 
+    /*
     public int getPrimes()
     {
         int count = 0;
@@ -58,4 +61,5 @@ public class Buffer
 
         return count;
     }
+    */
 }
