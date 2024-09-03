@@ -20,6 +20,14 @@ public class Main
         tha mpainoun tmimatika...
          */
 
+        /*
+        1 παραγωγός ή/και 1 καταναλωτής
+        Ο διακριτός αμοιβαίος αποκλεισμός σε back ή/και
+        front αντίστοιχα είναι περιττός. Όμως ο αμοιβαίος
+        αποκλεισμός σε ολόκληρο το buffer είναι
+        απαραίτητος, εκτός αν size = 1
+         */
+
         int bufferSize = 5;
         int totalItems = 20;
         int nOfProducers = 1;

@@ -36,8 +36,10 @@ public class Buffer
     public void put(int item)
     {
         try {
+            //edo isos na min thelei to P(itemsToPut) afou exo max theseis...
+
             //P(itemsToPut) & P(bufferMutex)
-            itemsToPut.acquire();
+            //itemsToPut.acquire();
             buffMutex.acquire();
 
             //Add item

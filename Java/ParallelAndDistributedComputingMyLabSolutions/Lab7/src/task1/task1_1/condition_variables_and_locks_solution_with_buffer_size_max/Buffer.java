@@ -56,6 +56,8 @@ public class Buffer
         try {
             buffLock.lock();
 
+            //vlepeis leipei o elegxos an counter == size
+
             //Add item
             back = back + 1;
             contents[back] = item;

@@ -20,6 +20,15 @@ public class Main
         tha mpainoun tmimatika...
          */
 
+        /*
+        Buffer μιας θέσης, size = 1
+        (α) Μόνο ένας παραγωγός ή καταναλωτής μπορεί
+        να καταλάβει το buffer. Δεν απαιτείται ιδιαίτερος
+        αμοιβαίος αποκλεισμός για τo buffer (ή back, front).
+        (β) Επιβάλλεται αυστηρή εναλλαγή παραγωγού -
+        καταναλωτή.
+         */
+
         //int bufferSize = 5;
         int totalItems = 20;
         int nOfProducers = 3;

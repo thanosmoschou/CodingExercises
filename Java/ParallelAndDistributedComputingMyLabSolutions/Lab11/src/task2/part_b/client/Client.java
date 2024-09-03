@@ -24,7 +24,7 @@ public class Client
         String objName = "MyPI";
         PI pi = (PI) registry.lookup(objName);
 
-        long numSteps = 100000003;
+        long numSteps = 10000000;
         System.out.println("PI for steps: " + numSteps + " is: " + pi.calculatePI(numSteps));
     }
 }

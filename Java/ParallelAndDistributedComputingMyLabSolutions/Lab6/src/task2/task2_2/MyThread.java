@@ -37,7 +37,7 @@ public class MyThread extends Thread
     @Override
     public void run()
     {
-        for (int p = myId + 2; p <= limit; p += totalThreads) //kanonika einai apo myId alla sto sieve of eratosthenis ksekinaei apo to myId+2...
+        for (int p = myId + 2; p <= limit; p += totalThreads) //kanonika einai apo myId alla sto sieve of eratosthenis ksekinaei apo to myId+2...kai se kikliki pas mexri < alla edo einai eksairesi...
         {
             // If prime[p] is not changed, then it is a prime
             if (primes[p])

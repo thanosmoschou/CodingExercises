@@ -17,7 +17,6 @@ public class Server
     {
         ServerSocket serverSocket = new ServerSocket(PORT);
 
-        //iterative server...in next labs I will make a multithreading one...
         while (true)
         {
             Socket connectionSocket = serverSocket.accept();

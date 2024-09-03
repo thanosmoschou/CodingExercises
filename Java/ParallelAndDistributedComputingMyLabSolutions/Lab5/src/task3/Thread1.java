@@ -31,7 +31,6 @@ public class Thread1 extends Thread
             localSum += 4.0 / (1.0 + x * x);
         }
 
-        //den thelo locks gt kathe nima grafei se ksexoristi thesi...anagogi stin main...
         myShared.addLocalSum(localSum);
     }
 }

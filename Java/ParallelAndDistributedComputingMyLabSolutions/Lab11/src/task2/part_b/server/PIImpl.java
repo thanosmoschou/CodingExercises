@@ -7,7 +7,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class PIImpl extends UnicastRemoteObject implements PI
 {
-    private BufferPI bufferPI;
+    private static BufferPI bufferPI; //an den valeis static tote kathe neo instance tou PIImpl tha exei neo BufferPI
 
     public PIImpl(BufferPI b) throws RemoteException
     {
