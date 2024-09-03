@@ -6,7 +6,7 @@ Description: Parallel And Distributed Computing Lab Solutions...
 package task2;
 
 /*
-Reduction from main...each thread stores its local sum to a different place of a partial sum array and
+Reduction in main...each thread stores its local sum to a different place of a partial sum array and
 then main adds all the values together and calculates pi (this was from task 1 which did not need mutual exclusion)
 
 sequential program results with 100000000 steps
@@ -49,6 +49,7 @@ public class NumInt
         long numSteps = 1000000000;
         double step = 1.0 / (double) numSteps;
 
+        //edo mporeis na peraseis mono to numsteps kai na ipologistei to step ston constructor
         Shared myShared = new Shared(step);
 
         int totalThreads = Runtime.getRuntime().availableProcessors();
@@ -59,6 +60,7 @@ public class NumInt
 
         for (int i = 0; i < totalThreads; i++)
         {
+            //to idio kai edo an thes pernas mono numsteps anti gia step kai to ipologizei mesa ston constructor...
             threads[i] = new Thread1(i, myShared, totalThreads, numSteps, step);
             threads[i].start();
         }
@@ -70,6 +72,7 @@ public class NumInt
             } catch (InterruptedException e) {}
         }
 
+        //isos kai ligo peritto...
         myShared.calculatePi();
 
         double pi = myShared.getPi();

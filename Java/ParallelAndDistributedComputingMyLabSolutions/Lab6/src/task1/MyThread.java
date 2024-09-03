@@ -28,7 +28,7 @@ public class MyThread extends Thread
     @Override
     public void run()
     {
-        for (int i = myId; i <= matchLength; i += totalThreads)
+        for (int i = myId; i < matchLength; i += totalThreads)
         {
             int j;
             for (j = 0; j < patternLength && pattern[j] == text[j + i]; j++); //null statement...but works for us

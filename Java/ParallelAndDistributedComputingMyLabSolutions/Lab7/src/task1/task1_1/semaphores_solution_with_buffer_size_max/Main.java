@@ -20,6 +20,12 @@ public class Main
         tha mpainoun tmimatika...
          */
 
+        /*
+        Buffer `απείρων` θέσεων, size = ΜΑΧ
+        (α) Δεν απαιτείται έλεγχος counter == size
+        (β) Δεν απαιτείται %size στις πράξεις front, back
+         */
+
         int bufferSize = 50000000; //I wanted to put Integer.MAX_VALUE; but is too much...
         int totalItems = 200000;
         int nOfProducers = 30;

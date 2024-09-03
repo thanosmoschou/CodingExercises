@@ -10,6 +10,7 @@ public class PIImpl extends UnicastRemoteObject implements PI
 
     public PIImpl() throws RemoteException {}
 
+    //pleon to protocol pou ftiaxno exei antikatastathei apo tin ilopoiisi tou interface mou...
     @Override
     public double calculatePI(long numSteps) throws RemoteException
     {

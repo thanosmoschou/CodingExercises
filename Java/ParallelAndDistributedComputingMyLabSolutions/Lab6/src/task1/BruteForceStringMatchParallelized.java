@@ -55,8 +55,8 @@ public class BruteForceStringMatchParallelized
 {
     public static void main(String[] args) throws IOException
     {
-        //String filename = "E.coli"; //root folder is the intellij's project folder...
-        String filename = "sixteentimes.txt";
+        String filename = "E.coli"; //root folder is the intellij's project folder...
+        //String filename = "sixteentimes.txt";
 
         //String fileString = new String(Files.readAllBytes(Paths.get(args[0])));//, StandardCharsets.UTF_8);
         String fileString = new String(Files.readAllBytes(Paths.get(filename)));

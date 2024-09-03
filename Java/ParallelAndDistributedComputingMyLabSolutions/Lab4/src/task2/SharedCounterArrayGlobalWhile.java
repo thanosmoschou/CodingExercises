@@ -8,7 +8,6 @@ package task2;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-//I need locks...I will fix it to the next tasks...
 public class SharedCounterArrayGlobalWhile
 {
     public static void main(String[] args)

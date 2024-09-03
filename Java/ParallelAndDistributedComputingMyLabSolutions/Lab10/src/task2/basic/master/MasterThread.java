@@ -34,6 +34,9 @@ public class MasterThread extends Thread
     @Override
     public void run()
     {
+        //vlepeis oti to master thread aplos diavazei apo to revma kai to stelnei sto protocol kai
+        //pairnei kati apo to protocol kai to grafei sto revma eksodou...den kanei calculations...
+        //oti calculation prepei na ginei tha ginei apo to protocol...
         MasterProtocol app = new MasterProtocol(numSteps, workerId, step, shared);
 
         String inp, outp;
