@@ -115,3 +115,16 @@ group by query_name
 
 Απλα δημιουργω ενα συνολο μεσω της στηλης rating. Το συνολο θα περιλαμβανει την τιμη 1 αν η εκαστοτε τιμη στην στηλη rating ειναι μικροτερη απο 3, αλλιως η αντιστοιχη τιμη στο συνολο μου μεσω της case θα ειναι ιση με 0. Μετα βασει ολων των 1 και 0 που δημιουργησα, παιρνω τον μεσο ορο του συνολου αυτου και πολλαπλασιαζω επι 100 για ποσοστο.
 */
+
+--Kai epeidi mallon prosthesan nea cases kai auti i lisi den doulevei gia kapoia cases prostheto tin parakato:
+
+# Write your MySQL query statement below
+select query_name, round(avg(rating/position), 2) as quality, round(
+avg(
+  case
+    when rating < 3 then 1
+    else 0
+  end) * 100, 2) as poor_query_percentage
+from Queries as q
+where query_name is not null
+group by query_name
