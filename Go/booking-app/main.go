@@ -33,12 +33,14 @@ type UserData struct {
 
 func main() {
 	//Go uses , in function calls to separate arguments and in composite literals (like slices and arrays) to list elements.
-	//Also keep in mind that inside Println it automatically adds a space before and after the variable's value,
+	//Also keep in mind that if you add multiple arguments inside Println it automatically adds a space before and after the variable's value,
 	//while other languages don't do that. In Java we need to add spaces manually.
 	//Also Println adds a new line
 	//fmt.Println("Welcome to", conferenceName, "booking application!")
 	//fmt.Println("We have total of", conferenceTickets, "and", remainingTickets, "are still available")
 	//fmt.Println("Get your tickets here to attend.")
+	//You can also concatenate strings inside Println if you want...
+	//fmt.Println("Hello " + "World") -> this is evaluated to a single argument that is passed to Println
 
 	//To print formatted data, use printf
 	//%v is a placeholder. It is the default format, but we have other formats available. Check Go's documentation for more.
