@@ -16,11 +16,11 @@ func main() {
 	originalPrice := 14000.0
 	age := 8.5
 
-	//model1 := "Bugatti Veyron"
-	//model1 := "Ford Focus"
+	// model1 := "Bugatti Veyron"
+	// model1 := "Ford Focus"
 	model1 := "Volkswagen Beetle"
 	model2 := "Volkswagen Golf"
-	//model2 := "Ford Pinto"
+	// model2 := "Ford Pinto"
 
 	fmt.Printf("Does %v need license -> %v\n", vehicleType1, purchase.NeedsLicense(vehicleType1))
 	fmt.Printf("Does %v need license -> %v\n", vehicleType2, purchase.NeedsLicense(vehicleType2))

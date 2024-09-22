@@ -20,7 +20,7 @@ func HappyBirthday(name string, age int) string {
 
 // AssignTable assigns a table to each guest.
 func AssignTable(name string, table int, neighbour string, direction string, distance float64) string {
-	//%03d means print a decimal number with 3 digits of format and if the number is smaller than 3 digits, add leading 0's to become 3 digits.
-	//%.1f means print a floating point number with 1 digit of precision.
+	// %03d means print a decimal number with 3 digits of format and if the number is smaller than 3 digits, add leading 0's to become 3 digits.
+	// %.1f means print a floating point number with 1 digit of precision.
 	return fmt.Sprintf("Welcome to my party, %s!\nYou have been assigned to table %03d. Your table is %s, exactly %.1f meters from here.\nYou will be sitting next to %s.", name, table, direction, distance, neighbour)
 }
