@@ -29,7 +29,7 @@ func main() {
 }
 
 func hello(wg *sync.WaitGroup) {
-	defer wg.Done() //The defer goes at the beginning of the function (good practise)
+	defer wg.Done() // The defer goes at the beginning of the function (good practise)
 
 	var res float64
 	var err error

@@ -7,10 +7,10 @@ package lasagna
 
 import "fmt"
 
-//This constant is also exported due to the first capitalized letter
+// This constant is also exported due to the first capitalized letter
 const OvenTime int = 40
 
-//This function is exported because the first letter is capitalized
+// This function is exported because the first letter is capitalized
 func RemainingOvenTime(actualMinutesInOven int) int {
 	if actualMinutesInOven < 0 {
 		fmt.Println("Enter a valid oven time...")
