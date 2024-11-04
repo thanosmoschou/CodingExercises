@@ -1,0 +1,1 @@
+This folder contains exercises from the *Parallel and Distributed Computing course for 2024*, implemented in Go instead of Java. Note that in some labs, I haven't completed all tasks; rather, I focused on those I found most useful. When working on these exercises in Java, I completed most of the tasks.
