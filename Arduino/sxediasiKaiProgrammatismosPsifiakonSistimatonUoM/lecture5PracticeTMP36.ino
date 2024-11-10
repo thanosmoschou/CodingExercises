@@ -1,5 +1,10 @@
-// C++ code
-//
+/*
+Components:
+1 Uno R3
+1 TMP36 Sensor
+Jumper wires
+*/
+
 int d;
 double temp;
 
