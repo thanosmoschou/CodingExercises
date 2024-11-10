@@ -1,5 +1,12 @@
-// C++ code
-//
+/*
+Components:
+1 Uno R3
+1 Red Led
+2 Resistor 1k Ohm
+1 Photoresistor
+Jumper wires
+*/
+
 const int ldrPin = A0;
 const int ledPin = 13;
 

@@ -1,5 +1,13 @@
-// C++ code
-//
+/*
+Components:
+1 Uno R3 Board
+3 Resistors 1k Ohm
+1 Distance Sensor
+1 RGB Led
+1 Breadboard
+Jumper Wires
+
+*/
 
 const int redPin = 3;
 const int greenPin = 5;
@@ -75,6 +83,23 @@ void loop()
 
   duration = pulseIn(echoPin, HIGH);
   distance = duration * 0.034 / 2;
+  
+  if (distance < 50) {
+    digitalWrite(redPin, HIGH);
+  	digitalWrite(greenPin, LOW);
+  	digitalWrite(bluePin, LOW);
+  	delay(1000);
+  } else if (distance < 70) {
+    digitalWrite(redPin, LOW);
+  	digitalWrite(greenPin, LOW);
+  	digitalWrite(bluePin, HIGH);
+  	delay(1000);
+  } else {
+    digitalWrite(redPin, LOW);
+  	digitalWrite(greenPin, HIGH);
+  	digitalWrite(bluePin, LOW);
+  	delay(1000);
+  }
 
   Serial.print("Distance: ");
   Serial.print(distance);
