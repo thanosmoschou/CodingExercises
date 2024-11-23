@@ -30,6 +30,10 @@ LiquidCrystal lcd(2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
 const int inputAnalogPin = A0;
 int prevValue = -1;
 
+int analogValues[] = {1023, 511, 341, 256, 205, 170, 146, 128, 114, 102, 93, 85, 79, 73, 68, 64};
+String printValues[] = {"1", "2", "3", "A", "4", "5", "6", "B", "7", "8", "9", "C", "*", "0", "#", "D"};
+int arrSize = sizeof(analogValues) / sizeof(analogValues[0]);
+
 void updateScreen() {
   int d = analogRead(inputAnalogPin);
   String key;
@@ -41,55 +45,11 @@ void updateScreen() {
     prevValue = d;
   }
   
-  switch (d) {
-    case 1023:
-    	key = "1";
-    	break;
-    case 511:
-    	key = "2";
-    	break;
-    case 341:
-    	key = "3";
-    	break;
-    case 256:
-    	key = "A";
-    	break;
-    case 205:
-    	key = "4";
-    	break;
-    case 170:
-    	key = "5";
-    	break;
-    case 146:
-    	key = "6";
-    	break;
-    case 128:
-    	key = "B";
-    	break;
-    case 114:
-    	key = "7";
-    	break;
-    case 102:
-    	key = "8";
-    	break;
-    case 93:
-    	key = "9";
-    	break;
-    case 85:
-    	key = "C";
-    	break;
-    case 79:
-    	key = "*";
-    	break;
-    case 73:
-    	key = "0";
-    	break;
-    case 68:
-    	key = "#";
-    	break;
-    case 64:
-    	key = "D";
-    	break;
+  for (int i = 0; i < arrSize; i++) {
+    if (d == analogValues[i]) {
+      key = printValues[i];
+      break;
+    }
   }
   
   lcd.setCursor(0, 1);
