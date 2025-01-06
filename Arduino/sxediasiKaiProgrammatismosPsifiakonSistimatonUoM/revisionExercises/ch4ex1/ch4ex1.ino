@@ -8,6 +8,7 @@ Components:
 3 Resistors 220 Ohm
 1 ATTiny85
 3 Leds
+Jumper Wires
 */
 
 int pins[] = {0, 1, 2}; // PB0, PB1, PB2
