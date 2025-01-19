@@ -188,7 +188,7 @@ Resistor: KiCad Resistor
 Photoresistor: KiCad R_Photo
 	Footprint: OptoDevice:R_LDR_5.1x4.3mm_P3.4mm_Vertical
 
-MicroServo: KiCad Motor_Servo
+MicroServo: KiCad Motor_Servo, h tha to vreis os Motor_Servo_AirTronics
 	Footprint: Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Horizontal
 
 Crystal: KiCad Crystal
@@ -207,7 +207,7 @@ Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown -> Regulator th
 Package_TO_SOT_SMD:TO-252-2 -> SM regulator sm
 
 Potentiometer_THT:Potentiometer_Bourns_3339P_Vertical_HandSoldering -> potentiometer th
-Potentiometer_SMD:Potentiometer_Bourns_3314G_Vertical -> potentiometer th
+Potentiometer_SMD:Potentiometer_Bourns_3314G_Vertical -> potentiometer sm
 
 Capacitor_THT:C_Disc_D6.0mm_W4.4mm_P5.00mm -> Capacitor TH
 Capacitor_SMD:C_0805_2012Metric -> Capacitor SM
@@ -223,3 +223,7 @@ Crystal:Crystal_HC49-4H_Vertical -> Crystal
 Fiducial:Fiducial_1mm_Mask2mm -> fiducial
 
 MountingHole:MountingHole_3.2mm_M3 -> mounting hole
+
+LED_SMD:LED_0402_1005Metric -> Random SM led...use th pou exo pano kanonika ektos kai an zitaei sm
+
+Button_Switch_THT:SW_Slide-03_Wuerth-WS-SLTV_10x2.5x6.4_P2.54mm -> Slider switch
