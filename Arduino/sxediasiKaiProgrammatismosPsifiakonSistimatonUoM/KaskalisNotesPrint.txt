@@ -183,10 +183,16 @@ LED: KiCad Led
 	Footprint: LED_THT:LED_D5.0mm_Clear
 
 Resistor: KiCad Resistor	
-	Footprint: Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
+	Footprint: Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal gia TH
+		   Resistor_SMD:R_0805_2012Metric gia SM
 
 Photoresistor: KiCad R_Photo
 	Footprint: OptoDevice:R_LDR_5.1x4.3mm_P3.4mm_Vertical
+		   
+	To vrika kai os: A1050 
+	me footprint: OptoDevice:R_LDR_D6.4mm_P3.4mm_Vertical
+	
+	Prosoxi to ENA einai R photo kai to allo A1050
 
 MicroServo: KiCad Motor_Servo, h tha to vreis os Motor_Servo_AirTronics
 	Footprint: Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Horizontal
