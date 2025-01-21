@@ -165,7 +165,10 @@ Schematic:
 Useful Components and Footprints:
 
 ATMega328: KiCAD ATmega328-P (through hole)
-	Footprint: Package_DIP:DIP-28_W7.62mm
+	Footprint: Package_DIP:DIP-28_W7.62mm through hole
+
+	ATmega328-A (surface mount)
+	Footprint: 
 
 Temperature Sensor: KiCAD TSIC206-TO92
 	Footprint: Package_TO_SOT_THT:TO-92_Inline
@@ -187,7 +190,7 @@ Resistor: KiCad Resistor
 		   Resistor_SMD:R_0805_2012Metric gia SM
 
 Photoresistor: KiCad R_Photo
-	Footprint: OptoDevice:R_LDR_5.1x4.3mm_P3.4mm_Vertical
+	Footprint: OptoDevice:R_LDR_5.1x4.3mm_P3.4mm_Vertical (Auto doulevei o kathigitis)
 		   
 	To vrika kai os: A1050 
 	me footprint: OptoDevice:R_LDR_D6.4mm_P3.4mm_Vertical
@@ -215,12 +218,13 @@ Package_TO_SOT_SMD:TO-252-2 -> SM regulator sm
 Potentiometer_THT:Potentiometer_Bourns_3339P_Vertical_HandSoldering -> potentiometer th
 Potentiometer_SMD:Potentiometer_Bourns_3314G_Vertical -> potentiometer sm
 
+Gia capacitor se crystallo grapse san label 22pF
 Capacitor_THT:C_Disc_D6.0mm_W4.4mm_P5.00mm -> Capacitor TH
 Capacitor_SMD:C_0805_2012Metric -> Capacitor SM
 
 Fuse:Fuse_1812_4532Metric -> Fuse
 
-Connector_USB:USB_B_OST_USB-B1HSxx_Horizontal -> USB Type B
+Connector_USB:USB_B_OST_USB-B1HSxx_Horizontal -> USB Type B (sto kicad to vriskeis os USB B)
 
 Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A -> Pushbutton SM
 
