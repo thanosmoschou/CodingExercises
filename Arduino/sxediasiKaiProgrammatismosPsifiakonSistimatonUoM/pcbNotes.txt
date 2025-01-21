@@ -8,6 +8,8 @@
 
 -> Αν παρεις 9V μπαταρια ενώ θες 5V τοτε πρεπει να βαλεις regulator και 2 πυκνωτες εξομάλυνσης. Αν όμως βαλεις usb τοτε δεν θες regulator ουτε πυκνωτες.
 
+-> Kathe led kai diki tou antistasi na to thimasai.
+
 
 Τυποι:
 
@@ -209,7 +211,7 @@ ICSP: Kicad Conn_02x03_Odd_Even
 
 Alla diafora footprints:
 
-Connector_BarrelJack:BarrelJack_Horizontal -> Jack gia 9v battery
+Connector_BarrelJack:BarrelJack_Horizontal -> Jack gia 9v battery i apo metasximatisti revmatos
 
 Package_TO_SOT_THT:TO-220-3_Vertical -> Regulator th
 Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown -> Regulator th
@@ -237,3 +239,5 @@ MountingHole:MountingHole_3.2mm_M3 -> mounting hole
 LED_SMD:LED_0402_1005Metric -> Random SM led...use th pou exo pano kanonika ektos kai an zitaei sm
 
 Button_Switch_THT:SW_Slide-03_Wuerth-WS-SLTV_10x2.5x6.4_P2.54mm -> Slider switch
+
+Connector_PinSocket_1.27mm:PinSocket_1x02_P1.27mm_Vertical -> Isos gia kapoio dc motor
