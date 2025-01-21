@@ -237,6 +237,7 @@ Fiducial:Fiducial_1mm_Mask2mm -> fiducial
 MountingHole:MountingHole_3.2mm_M3 -> mounting hole
 
 LED_SMD:LED_0402_1005Metric -> Random SM led...use th pou exo pano kanonika ektos kai an zitaei sm
+An thes kai ena allo autos exei doulepsei: LED_SMD:LED_0805_2012Metric
 
 Button_Switch_THT:SW_Slide-03_Wuerth-WS-SLTV_10x2.5x6.4_P2.54mm -> Slider switch
 
