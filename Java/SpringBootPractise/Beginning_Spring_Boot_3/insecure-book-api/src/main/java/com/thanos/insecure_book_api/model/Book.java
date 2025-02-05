@@ -8,15 +8,15 @@ import jakarta.validation.constraints.NotNull;
 @Table(name = "books")
 public class Book {
     @Id
-    @NotNull
+    @NotNull(message = "ISBN cannot be null.")
     @Column(name = "isbn")
     private String isbn;
 
-    @NotNull
+    @NotNull(message = "Author cannot be null.")
     @Column(name = "author")
     private String author;
 
-    @NotNull
+    @NotNull(message = "Title cannot be null.")
     @Column(name = "title")
     private String title;
 

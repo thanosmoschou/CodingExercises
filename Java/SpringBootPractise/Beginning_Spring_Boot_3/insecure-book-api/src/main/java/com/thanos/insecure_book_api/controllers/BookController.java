@@ -17,7 +17,7 @@ public class BookController {
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addBook(@Valid @RequestBody Book book) {
+    public void addBook(@Valid @RequestBody Book book) { // @Valid triggers the validation api
         /*
             If you send something like this
             {

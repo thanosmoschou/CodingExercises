@@ -2,7 +2,6 @@ package com.thanos.insecure_book_api.services;
 
 import com.thanos.insecure_book_api.model.Book;
 import com.thanos.insecure_book_api.repositories.BookRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,7 +34,6 @@ public class BookService {
         bookRepository.save(book);
     }
 
-    @Transactional
     public void deleteBookByTitle(String title) {
         bookRepository.deleteBookByTitle(title);
     }
