@@ -1,12 +1,9 @@
 package com.thanos.secure_book_api_v1.controllers;
 
 import com.thanos.secure_book_api_v1.model.Book;
-import com.thanos.secure_book_api_v1.repository.BookRepository;
 import com.thanos.secure_book_api_v1.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

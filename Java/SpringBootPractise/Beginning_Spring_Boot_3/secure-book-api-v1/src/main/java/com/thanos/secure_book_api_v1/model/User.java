@@ -15,18 +15,21 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
+    @Column(name = "username", unique = true, nullable = false)
+    private String username;
+    @Column(name = "password", unique = true, nullable = false)
     private String password;
+    @Column(name = "roles", unique = true, nullable = false)
     private String roles;
 
-    public User(String name, String password, String roles) {
-        this.name = name;
+    public User(String username, String password, String roles) {
+        this.username = username;
         this.password = password;
         this.roles = roles;
     }
 
     public User() {
-        this.name = "";
+        this.username = "";
         this.password = "";
         this.roles = "";
     }
@@ -45,12 +48,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -74,19 +77,19 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(name, user.name) && Objects.equals(password, user.password) && Objects.equals(roles, user.roles);
+        return Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(roles, user.roles);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, password, roles);
+        return Objects.hash(id, username, password, roles);
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", roles='" + roles + '\'' +
                 '}';

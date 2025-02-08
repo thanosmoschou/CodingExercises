@@ -3,7 +3,6 @@ package com.thanos.secure_book_api_v1.services;
 import com.thanos.secure_book_api_v1.model.Book;
 import com.thanos.secure_book_api_v1.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

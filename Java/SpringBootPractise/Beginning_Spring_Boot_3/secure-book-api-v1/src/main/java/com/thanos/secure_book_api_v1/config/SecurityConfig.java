@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -28,12 +29,16 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable) // Method reference
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/books/add").hasRole("ADMIN")
-                            .requestMatchers("/books/all").permitAll()//.hasAnyRole("ADMIN", "USER")
-                            .requestMatchers("/register").permitAll()
+                            .requestMatchers("/books/all").hasAnyRole("ADMIN", "USER")
+                            .requestMatchers("/register").hasRole("ADMIN")
                             .requestMatchers("/login").permitAll()
                             .anyRequest()
                             .authenticated())
                 .formLogin(Customizer.withDefaults())
+                .sessionManagement(session -> {
+                    session.maximumSessions(1);
+                    session.sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
+                })
                 .logout(logout -> logout.logoutUrl("/logout").permitAll());
 
         return http.build();

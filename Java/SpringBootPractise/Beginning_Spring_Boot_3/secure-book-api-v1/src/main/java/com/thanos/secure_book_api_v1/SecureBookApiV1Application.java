@@ -1,8 +1,7 @@
 package com.thanos.secure_book_api_v1;
 
-import com.thanos.secure_book_api_v1.repository.UserRepository;
-import com.thanos.secure_book_api_v1.services.UserService;
 import com.thanos.secure_book_api_v1.model.User;
+import com.thanos.secure_book_api_v1.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
