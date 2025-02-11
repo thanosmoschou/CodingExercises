@@ -1,0 +1,2 @@
+This is a simple book api that contains some basic Spring Security Configurations. In the v1 version I implemented a basic **form login** security mechanism, 
+combined with **roles** security mechanism and **session** creation.
