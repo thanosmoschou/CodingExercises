@@ -1,0 +1,66 @@
+/*
+Author: Athanasios Moschou
+Description: Exams 2025
+*/
+
+// Red led is for temperature and green is for light
+
+int redPin = 4;
+int greenPin = 3;
+int signalPin = 2;
+
+int photoPin = A0;
+int tmpPin = A1;
+
+float TEMPER_LIMIT = 30.0;
+int LIGHT_LIMIT = 500;
+
+bool l = false;
+bool t = false;
+
+void setup()
+{
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(signalPin, INPUT);
+  pinMode(photoPin, INPUT);
+  pinMode(tmpPin, INPUT);
+  
+  digitalWrite(signalPin, LOW);
+	
+}
+
+void loop()
+{
+  int currLight = 0;
+  float currTemp = 0;
+  
+  while (digitalRead(signalPin) == LOW) {
+    currLight = analogRead(photoPin);
+    currTemp = 0.49 * analogRead(tmpPin) - 50;
+    
+    digitalWrite(redPin, LOW);
+    digitalWrite(greenPin, LOW);
+    
+    if (currLight > LIGHT_LIMIT ) {
+      l = true;
+    }
+    
+    if (currTemp > TEMPER_LIMIT) {
+      t = true;
+    }
+  }
+  
+  if (l) {
+    digitalWrite(greenPin, HIGH);
+  } else {
+    digitalWrite(greenPin, LOW);
+  }
+  
+  if (t) {
+    digitalWrite(redPin, HIGH);
+  } else {
+    digitalWrite(redPin, LOW);
+  }
+  
+}
