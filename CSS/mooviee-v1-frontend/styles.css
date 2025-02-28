@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
+p,
+h1,
+h2,
+li {
+    color: white;
+    font-family: 'Onest', sans-serif;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(rgba(21, 134, 154, 0.5), rgba(243, 179, 179, 0.5));
+    /* This ensures it covers the whole viewport */
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-screen {
+    background-color: rgba(112, 135, 147, 0.9);
+    border: 2px solid #829ca8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    /* No need for flex start */
+    /* justify-content: flex start; */
+
+    /* Since you have a flex container with centered items, you don't need to use margin: auto */
+    /* margin: auto; */
+    width: 95%;
+    /* border: 2px solid red; */
+}
+
+header {
+    display: flex;
+    /* By default, flex items are in a row direction */
+    /* flex-direction: row; */
+
+    /* The flex start positions the items at the start of the container. 
+    Prefer space between or space around for responsive design layouts*/
+    /* justify-content: flex-start; */
+    justify-content: space-between;
+    padding: 0 40px;
+    /* border: 2px solid blue; */
+    border-radius: 10px;
+    align-items: center;
+}
+
+/* If not necessary, don't use margins and widths. Instead use padding */
+
+/* header h1 {
+    margin-left: 20px;
+} */
+
+header ul {
+    padding: 0px;
+    /* margin-left: 400px; */
+    display: flex;
+    /* height: 40px;
+    width: 300px; */
+    /* justify-content: space-evenly; */
+    padding: 20px 40px;
+    gap: 30px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 20px;
+    align-items: center;
+}
+
+header li {
+    list-style-type: none;
+}
+
+.account-panel {
+    /* margin-left: 430px; */
+    display: flex;
+    flex-direction: row;
+}
+
+.top-movies {
+    /* border: 2px solid green; */
+    /* margin-top: 30px; */
+    padding: 30px 40px;
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: center; */
+}
+
+.movie-1,
+.movie-2 {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* In width and height, use percentages, em or rem instead of fixed values(px) */
+.movie-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/oblivion.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 40%;
+    height: 250px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.movie-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/jumanji.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 60%;
+    height: 250px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 100px;
+}
+
+.movie-1 div,
+.movie-2 div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.play-button {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.categories {
+    /* border: 2px solid red; */
+    margin: auto;
+    /* Correct use of margin auto*/
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+}
+
+.categories-container {
+    /* border: 2px solid blue; */
+    display: flex;
+    gap: 2em;
+}
+
+.categories div {
+    display: flex;
+    /* flex-direction: row; */
+    background-color: #87a1ad;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    align-items: center;
+    /* width: 150px; */
+    justify-content: center;
+}
+
+.categories img {
+    height: 20px;
+    width: 20px;
+}
+
+#trending-heading {
+    /* Since we have added padding in the header class, we don't need to add margin-left */
+    /* margin-left: 30px; */
+}
+
+.trending-heading-container {
+    /* border: 2px solid blueviolet; */
+}
+
+.trending {
+    padding: 20px 40px;
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* flex-direction: row; */
+    justify-content: space-start;
+    margin: auto;
+
+}
+
+.trending div {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 10px; */
+    justify-content: center;
+    align-items: center;
+}
+
+.trending img {
+    width: 180px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
