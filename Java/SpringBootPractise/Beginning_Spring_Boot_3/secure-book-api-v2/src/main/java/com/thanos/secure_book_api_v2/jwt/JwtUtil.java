@@ -53,8 +53,8 @@ public class JwtUtil {
                 .compact(); // Generates the final JWT string
     }
 
-    public boolean validateToken(String token, UserDetails userDetails) {
-        return userDetails.getUsername().equals(extractUsername(token)) && !isTokenExpired(token);
+    public boolean validateToken(String token) {
+        return !isTokenExpired(token);
     }
 
     public String extractUsername(String token) {

@@ -34,6 +34,7 @@ public class User {
         this.roles = "";
     }
 
+    // I do not use that here...but when you have a User class that inherits from UserDetails then you need it
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.stream(getRoles().split(",")) // Assuming roles are comma-separated
                 .map(role -> new SimpleGrantedAuthority("ROLE_" + role)) // CRUCIAL: Add "ROLE_" prefix
