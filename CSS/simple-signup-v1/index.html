@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <div class="main-screen">
+
+        <section class="left-screen">
+            <header>
+                <h2>Than</h2>
+                <div class="back-to-website">
+                    <p>Back to website</p>
+                    <img src="assets/right-arrow.png" />
+                </div>
+            </header>
+
+            <footer>
+                <h2>Capturing Moments,</h2>
+                <h2>Creating Memories</h2>
+            </footer>
+        </section>
+
+        <div class="right-screen">
+            <header>
+                <h2>Create an account</h2>
+                <p>Already have an account? <a href="#">Log in</a></p>
+            </header>
+
+            <form class="signup-form">
+                <div class="name-area">
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Last Name">
+                </div>
+
+                <div class="email-area">
+                    <input type="email" placeholder="Email">
+                </div>
+
+                <div class="password-area">
+                    <input id="password-input" type="password" placeholder="Enter your password">
+                    <img id="show-password" src="assets/show-password.png" onclick="showPassword()" />
+                </div>
+
+                <div class="agree-terms">
+                    <input type="checkbox">
+                    <p>I agree to the <a href="#">Terms &amp; Conditions</a></p>
+                </div>
+
+                <div class="submit">
+                    <button class="submit-btn">Create Account</button>
+                </div>
+            </form>
+
+            <footer class="other-register-options">
+                <p>Or register with</p>
+
+                <div class="registration-platforms-container">
+                    <div class="google">
+                        <img src="assets/google.png" />
+                        <h2>Google</h2>
+                    </div>
+
+                    <div class="apple">
+                        <img src="assets/apple-64.png" />
+                        <h2>Apple</h2>
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
