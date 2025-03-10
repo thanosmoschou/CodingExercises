@@ -38,7 +38,7 @@ public class UserService {
         // In update method we still check if the user exists and if
         // yes then we set isNewEntry to false so an update will occur
         // when calling save method.
-        return userRepository.findById(user.getId()) // flatMap gives a single Mono object. We use this to avoid nested Mono objects
+        return userRepository.findById(user.getId()) // flatMap gives a single Mono or Flux object, depending on which method we are calling. For example findById returns a Mono. We use this to avoid nested Mono or Flux objects
                 .flatMap(existingUser -> Mono.error(new DuplicateKeyException("User ID already exists!")))
                 .switchIfEmpty(Mono.defer(() -> {
                     user.setNew(true); // New entry for R2DBC
