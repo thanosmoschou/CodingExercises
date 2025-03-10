@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20),
+    age INTEGER
+);
