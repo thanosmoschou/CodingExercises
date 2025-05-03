@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>File Uploader</title>
+</head>
+<body>
+<h1>Welcome to file uploader</h1>
+<form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="name">Name of the file</label>
+        <input id="name" name="filename" type="text"/>
+    </div>
+    <div>
+        <label for="file">Select the file</label>
+        <input id="file" name="originalFile" type="file"/>
+    </div>
+    <div>
+        <input type="submit"/>
+    </div>
+</form>
+</body>
+</html>

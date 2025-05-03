@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>File Uploader</title>
+</head>
+<body>
+<h1>All files</h1>
+<ul>
+    <li th:each="file : ${files}" th:if="${file != null}">
+        <p>
+            <strong th:text="${file.filename}"></strong>
+            <a th:href="@{${file.streamUrl}}" target="_blank">[Stream]</a>
+        </p>
+
+        <!-- MP3 -->
+        <audio th:if="${file.filename.endsWith('.mp3')}" controls>
+            <source th:src="@{${file.streamUrl}}" type="audio/mpeg">
+        </audio>
+
+        <!-- Image preview -->
+        <img th:if="${file.filename.endsWith('.jpg') or file.filename.endsWith('.jpeg') or file.filename.endsWith('.png')}"
+             th:src="@{${file.streamUrl}}" width="200"/>
+
+        <!-- PDF preview -->
+        <iframe th:if="${file.filename.endsWith('.pdf')}"
+                th:src="@{${file.streamUrl}}" width="400" height="300"></iframe>
+
+        <!-- Display file path -->
+        <p>File Path: <span th:text="${file.filepath}"></span></p>
+
+        <!-- Display file type -->
+        <p>File Type: <span th:text="${file.type}"></span></p>
+    </li>
+</ul>
+</body>
+</html>
